@@ -55,3 +55,6 @@ gem 'font-awesome-sass'
 
 # Used for some Minecraft-related operations
 gem 'uuidtools'
+
+# Production logging
+gem 'rails_12factor'
