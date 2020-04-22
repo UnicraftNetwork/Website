@@ -12,16 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_04_19_220009) do
 
-  create_table "group_staffs", id: false, force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "staff_id"
+  create_table "group_staffs", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "staff_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["group_id"], name: "index_group_staffs_on_group_id"
     t.index ["staff_id"], name: "index_group_staffs_on_staff_id"
   end
 
-  create_table "groups", force: :cascade do |t|
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "identifier"
     t.string "name"
     t.string "colour_hex"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_220009) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "staffs", force: :cascade do |t|
+  create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "uuid"
     t.string "nick"
     t.string "role"
