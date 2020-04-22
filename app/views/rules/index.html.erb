@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="flash" style="margin-top: 100px;">
+  </div>
+
+  <section>
+    <div class="page-header">
+      <h2>
+        Reglamento Global
+      </h2>
+      <h6>Última modificación:
+        <%= RulesHelper::LAST_MODIFIED %>
+      </h6>
+      <h6>Autor:
+        <%= RulesHelper::AUTHOR %>
+      </h6>
+      <h6>Editores:
+        <% RulesHelper::EDITORS.each do |editor| %>
+          <% if RulesHelper::EDITORS.last.equal?(editor) %>
+            <%= editor %>
+          <% else %>
+            <%= editor %>,
+          <% end %>
+        <% end %>
+      </h6>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-md-12">
+        <h4>A. Compostura General</h4>
+
+        <ol>
+          <li>Ser un caballero.</li>
+          <li>Mantén una actitud calmada. Sé respetuoso y usa tu sentido común. Insultos excesivos, odio, y acoso no serán tolerados</li>
+          <li>No envíes nada de lo siguiente:
+            <ul>
+              <li>Material objetable, que incluye pero no está limitado a pornografía, virus, intentos de <a href="https://es.wikipedia.org/wiki/Phishing" target="_blank">phising</a> y referencias a grupos de odio.</li>
+              <li>Información personal de otros usuarios (<a href="https://es.wikipedia.org/wiki/Doxing" target="_blank">Doxing</a>).</li>
+            </ul></li>
+          <li>Sigue todas las indicaciones entregadas por el staff de UdeC Craft. Si crees que un miembro del staff ha actuado de mala manera, por favor ponte en contácto con la administración.</li>
+        </ol>
+
+        <h4>B. Discord</h4>
+
+        <ol>
+          <li>Mantente dentro del tema de cada canal. Lee la descripción de cada uno de ellos para saber cuál es.</li>
+          <li>No agregues ningún bot sin permiso explicito de la administración.</li>
+          <li>No utilices efectos de voz ni coloques música a travéz de tu cliente de Discord. Esto puede resultar en una infracción.</li>
+        </ol>
+
+        <p><strong>Nota:</strong> Las reglas listadas en el canal #📜reglamento📜 también aplican para el servidor de Discord.</p>
+
+        <h4>C. Comportamiento en el Servidor</h4>
+
+        <ol>
+          <li>No envíes mensajes que incentiven a jugadores a irse del servidor.</li>
+          <li>No debes usar ningun medio de chat in-game para solicitar dinero a otros jugadores. Cualquier usuario que sea encontrado practicando ésto será baneado permanentemente sin aviso previo.</li>
+          <li>Tu nombre de usuario y tu skin deben ser apropiados. Cuentas que sostengan un nombre de usuario y/o una skin inapropiados serán baneadas hasta que el nombre y/o la skin sean cambiados.</li>
+          <li>No abuses de glitches! Esto incluye, pero no está limitado a duplicar objetos, aprovechar exploits de dinero o errores en los plugins. En caso de encontrar algo en relación a este punto, ponte en contácto con el staff del servidor.</li>
+          <li>Los usuarios no deberán hacer spawn camp fuera del spawn del server Towny:
+            <ul>
+              <li>Atacando a jugadores nuevos que apenas salen de la construcción del spawn.</li>
+              <li>Directamente construyendo trampas o mecanísmos que deliberadamente tengan como objetivo arruinar la experiencia de juego de los recién llegados.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h4>D. Modificaciones al cliente</h4>
+
+        <ol>
+          <li>Modificaciones no permitidas por la comunidad Medieval:
+            <ul>
+              <li>Mods que faciliten la minería revelando la ubicación de menas y mazmorras tales como X-Ray, texture packs maliciosos, entre otros.</li>
+              <li>Mods que proyecten minimapas que alteren las interacciones entre jugadores revelando ubicaciones de cofres, hornos, entidades, etc.</li>
+              <li>Modificaciones que arruinen la experiencia de juego de la comunidad tales como vuelo, reach, velocity o knockback reducer, obtención y clonación de objetos y entidades.</li>
+            </ul>
+          </li>
+          <li>Modificaciones permitidas por la comunidad Medieval:
+            <ul>
+              <li>Uso de texture packs diseñados para el PvP y la mejora del rendimiento.</li>
+              <li>Uso de modificaciones que permitan alterar la configuración del juego de manera más avanzada con el fin de mejorar el rendimiento tales como OptiFine.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h4>E. Misceláneo</h4>
+
+        <ol>
+          <li>Estas reglas están sujetas a cambiar sin previo aviso.</li>
+          <li>Los usuarios son responsables de mantenerse al día con el estado de las reglas.</li>
+          <li>Hay un periodo de gracia de 10 días después de que un cambio de reglas sea efectuado.</li>
+          <li>UdeC Craft se reserva el derecho de banear o desbanear a cualquier usuario de cualquiera de sus servicios por cualquier motivo y sin dar aviso previo.</li>
+        </ol>
+
+        <h4>F. Consecuencias</h4>
+
+        <ol>
+          <li>Puedes recibir una infracción por romper cualquiera de las reglas listadas arriba.</li>
+          <li>La severidad de la infracción estará normalmente basada en la cantidad de infracciones previas de cada jugador; sin embargo, la decisión final queda a discreción del staff.</li>
+          <li>Violaciones particularmente obvias a cualquier regla serán inmediatamente penalizadas con un ban permanente sin advertencia previa.</li>
+          <li>Los usuario que sostengan múltiples advertencias por romper una o más reglas podrán ser baneados temporalmente sin aviso previo.</li>
+          <li>Evadir un ban con otra cuenta no está permitido, y resultará en un ban permanente para todas las cuentas alternativas asociadas al usuario evasor. Las cuentas alternativas no serán desbaneadas una vez expirado el ban original o en caso de ser apelado satisfactoriamente. En caso de encontrarse a un usuario evadiendo su ban, su infracción puede ser extendida hasta el triple del tiempo de la sanción original.</li>
+          <li>La evasión de ban persistente resultará en que todas las cuentas asociadas al infractor serán baneadas permanentemente sin cabida a apelación.</li>
+          <li>Usuarios que violen cualquiera de las reglas del servidor o del Discord pueden ser baneados de uno o todos los servicios que ofrecemos como network.</li>
+          <li><strong>Cualquier usuario que proporcione información falsa durante un proceso de reporte, apelación o contestación será baneado permanentemente de todos nuestros servicios.</strong></li>
+        </ol>
+
+        <p><strong>Nota</strong>: Todas las infracciones están sujetas a la discreción del staff.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+</div>

@@ -1,0 +1,43 @@
+<footer>
+  <div class="references">
+    <div class="above-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Políticas</h5>
+            <div class="list-group">
+              <a href="/privacy" class="list-group-item list-group-item-action">Pólitica de Privacidad</a>
+              <a href="/tos" class="list-group-item list-group-item-action">Términos de Servicio</a>
+              <a href="/rules" class="list-group-item list-group-item-action">Reglas</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Moderación</h5>
+            <div class="list-group">
+              <a href="/staff" class="list-group-item list-group-item-action">Staff</a>
+              <a href="#" class="list-group-item list-group-item-action">Contácto</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Involúcrate</h5>
+            <div class="list-group">
+              <a href="https://discord.gg/SAC4NJW" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-discord"></i> Discord</a>
+              <a href="https://github.com/ElMedievo-UdeC" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="container">
+    <hr style="margin-top: 10px;"/>
+  </div>
+  <% if current_page?(:controller => 'el_medievo') %>
+    <strong>&copy; ElMedievo 2020 - w/ <i class="fa fa-heart" aria-hidden="true"></i> ~Pepo</strong>
+  <% else %>
+    <strong>&copy; UdeC Craft 2020</strong>
+   <% end %>
+</footer>

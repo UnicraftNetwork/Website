@@ -1,0 +1,50 @@
+// Place all the styles related to the footer controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.above-footer {
+  color: white;
+}
+
+footer {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  color: #bdbdbd;
+}
+
+hr {
+  background-color: #bdbdbd;
+}
+
+.references h5 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #bdbdbd;
+}
+
+.references a {
+  color: #bdbdbd;
+}
+
+.list-group-item {
+  padding: 0.3rem 1rem !important;
+  border-radius: 3px !important;
+}
+
+.list-group {
+  margin: auto;
+  height: 100px;
+  width: 200px;
+}
+
+.list-group-item {
+  border-radius: 2px;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.list-group a:hover {
+  opacity: 0.8;
+  color: white;
+}

@@ -1,0 +1,48 @@
+<% @groups.each do |group| %>
+   <% next if group.staffs.count.eql?(0) %>
+    <div class="row">
+      <div class="col-md-12">
+        <h3 style="color: <%= group.colour_hex %>;"><%= group.name %>
+          <small><%= group.staffs.count %></small>
+        </h3>
+        <hr/>
+        <br/>
+      </div>
+    </div>
+
+   <div class="row">
+    <% group.staffs.each do |staff| %>
+      <div class="col-md-3 col-sm-6 staff-entry">
+        <a href="">
+          <% if staff.uuid? %>
+            <img style="width: 90px; height: 90px; border-radius: 5px;" class="avatar" src="https://api.ashcon.app/mojang/v1/avatar/<%= staff.uuid %>/90"  alt=""/>
+          <% else %>
+            <img style="width: 90px; height: 90px; border-radius: 5px;" class="avatar" src="https://api.ashcon.app/mojang/v1/avatar/Steve/90"  alt=""/>
+          <% end %>
+        </a>
+        <div class="staff-username">
+          <% if staff.uuid? %>
+            <strong style="color: <%= group.colour_hex %>;"><%= StaffHelper::Mojang.uuid_to_username(staff.uuid) %></strong>
+          <% else %>
+            <strong style="color: <%= group.colour_hex %>;"><%= staff.nick %></strong>
+          <% end %>
+        </div>
+        <div class="staff-role">
+          <%= staff.role %>
+        </div>
+        <div class="staff-social">
+          <% if staff.email? %>
+            <a class="staff-contact" href="mailto: <%= staff.email %>">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          <% end %>
+          <% if staff.discord? %>
+            <a style="cursor: help" title="<%= staff.discord %>" class="staff-contact">
+              <i class="fab fa-discord" aria-hidden="true"></i>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+   </div>
+  <% end %>
