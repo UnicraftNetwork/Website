@@ -14,9 +14,17 @@ Rails.application.routes.draw do
   # Staff page
   get 'staff' => 'staff#index'
 
+  # Placeholder view so clicking on staff heads doesn't overload the database
+  get 'profiles' => 'profiles#index'
+
   # Image gallery
   get 'gallery' => 'gallery#index'
 
   # Medieval Secrets
   get 'medievo' => 'el_medievo#index'
+
+  match '/404' => 'errors#not_found', via: :all
+  match '/422' => 'errors#illegal', via: :all
+  match '/500' => 'errors#internal_server_error', via: :all
+
 end
