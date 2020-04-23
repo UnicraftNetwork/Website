@@ -19,4 +19,4 @@ test:
 
 production:
   <<: *default
-  database: web_production
+  database: web_development
