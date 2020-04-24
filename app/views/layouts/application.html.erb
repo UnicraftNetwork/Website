@@ -21,15 +21,15 @@
 
     <% if current_page?(:controller => 'public') %>
       <title><%= ORG::NAME %> - Home</title>
-    <% else if current_page?(:controller => 'rules')%>
+    <% else if current_page?(:controller => 'rules') %>
       <title><%= ORG::NAME %> - Reglas</title>
-    <% else if current_page?(:controller => 'tos')%>
+    <% else if current_page?(:controller => 'tos') %>
        <title><%= ORG::NAME %> - Servicio</title>
-    <% else if current_page?(:controller => 'staff')%>
+    <% else if current_page?(:controller => 'staff') %>
        <title><%= ORG::NAME %> - Staff</title>
-    <% else if current_page?(:controller => 'el_medievo')%>
+    <% else if current_page?(:controller => 'el_medievo') %>
        <title><%= ORG::NAME %> - ElMedievo</title>
-    <% else if current_page?(:controller => 'gallery')%>
+    <% else if current_page?(:controller => 'gallery') %>
        <title><%= ORG::NAME %> - Galería</title>
     <% else %>
        <title><%= ORG::NAME %></title>
