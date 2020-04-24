@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='website' property='og:type'>
+
+    <meta content='UdeC Craft' property='og:title'>
+    <meta name="author" content="José Benavente">
+    <meta name="description" content="El servidor de Minecraft de la UdeC y ElMedievo!">
+    <meta content='#337AB7' name='theme-color'>
+
+
+    <meta content='https://udecesports.com' property='og:url'>
+    <meta content='https://udecesports.com/assets/images/logo.png' property='og:image'>
 
     <title><%= ORG::NAME %></title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -27,7 +38,5 @@
     <%= yield %>
 
     <%= render partial: "footer/footer" %>
-
-
   </body>
 </html>
