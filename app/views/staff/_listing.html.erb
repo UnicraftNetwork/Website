@@ -15,7 +15,7 @@
       <div class="col-md-3 col-sm-6 staff-entry">
         <a href="">
           <% if staff.uuid? %>
-            <img style="width: 90px; height: 90px; border-radius: 5px;" class="avatar" src="https://api.ashcon.app/mojang/v1/avatar/<%= staff.uuid %>/90"  alt=""/>
+            <img style="width: 90px; height: 90px; border-radius: 5px; background-color: black;" class="avatar" src="https://api.ashcon.app/mojang/v1/avatar/<%= staff.uuid %>/90"  alt=""/>
           <% else %>
             <img style="width: 90px; height: 90px; border-radius: 5px;" class="avatar" src="https://api.ashcon.app/mojang/v1/avatar/Steve/90"  alt=""/>
           <% end %>
