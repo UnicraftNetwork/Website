@@ -10,11 +10,35 @@
     <meta name="description" content="El servidor de Minecraft de la UdeC y ElMedievo!">
     <meta content='#337AB7' name='theme-color'>
 
-
     <meta content='https://udecesports.com' property='og:url'>
     <meta content='https://udecesports.com/assets/images/logo.png' property='og:image'>
 
-    <title><%= ORG::NAME %></title>
+    <% if current_page?(:controller => 'el_medievo') %>
+      <%= favicon_link_tag("logo_medievo.png") %>
+    <% else %>
+      <%= favicon_link_tag("logo.png") %>
+    <% end %>
+
+    <% if current_page?(:controller => 'public') %>
+      <title><%= ORG::NAME %> - Home</title>
+    <% else if current_page?(:controller => 'rules')%>
+      <title><%= ORG::NAME %> - Reglas</title>
+    <% else if current_page?(:controller => 'tos')%>
+       <title><%= ORG::NAME %> - Servicio</title>
+    <% else if current_page?(:controller => 'staff')%>
+       <title><%= ORG::NAME %> - Staff</title>
+    <% else if current_page?(:controller => 'el_medievo')%>
+       <title><%= ORG::NAME %> - ElMedievo</title>
+    <% else if current_page?(:controller => 'gallery')%>
+       <title><%= ORG::NAME %> - Galería</title>
+    <% else %>
+       <title><%= ORG::NAME %></title>
+    <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
+    <% end %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
