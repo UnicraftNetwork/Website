@@ -65,3 +65,7 @@ dependency-reduced-pom.xml
 *.xcworkspace
 xcuserdata
 *class
+
+# Ignore production scripts
+start.sh
+restart.sh
