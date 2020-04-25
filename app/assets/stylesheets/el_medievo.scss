@@ -1,3 +1,11 @@
 // Place all the styles related to the ElMedievo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.medievo-jumbotron {
+  padding: 4rem 2rem;
+  background-image: image_url('landing_medievo.png');
+  border-radius: 0.3rem;
+  background-position: center;
+  height: 500px;
+  margin-bottom: 0;
+}
