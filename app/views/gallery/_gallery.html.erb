@@ -4,7 +4,7 @@
 <div class="photo-gallery">
   <div class="container">
     <div class="row photos">
-      <% GalleryHelper::REMOTES_IMAGES_URLS.each do |url| %>
+      <% GalleryHelper::REMOTE_IMAGES_URLS.each do |url| %>
         <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="<%= url %>" data-lightbox="photos">
           <img style="border-radius: 3px; box-shadow: 7px 7px 6px #111;" class="img-fluid" src="<%= url %>" alt=""></a>
         </div>
