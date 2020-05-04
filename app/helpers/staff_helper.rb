@@ -1,8 +1,10 @@
 module StaffHelper
 
-  # Small Module for a quick resolution of Minecraft nicknames
+  # Small Module for a quick resolution of Minecraft nicknames & skin heads
   module Mojang
     require 'open-uri'
+
+    STEVE_UUID = '8667ba71-b85a-4004-af54-457a9734eed7'.freeze
 
     class Error < RuntimeError; end
 
@@ -19,8 +21,8 @@ module StaffHelper
         Timeout.timeout(timeout || 0) do
           open(url, &block)
         end
-      rescue OpenURI::HTTPError => ex
-        log "Failed to get url #{url}: #{ex}"
+      rescue OpenURI::HTTPError => e
+        log "Failed to get url #{url}: #{e}"
         raise Error
       rescue Timeout::Error
         log "Timed out (#{timeout}) getting url #{url}"
@@ -54,6 +56,14 @@ module StaffHelper
 
       def username_url(name)
         "https://api.ashcon.app/mojang/v1/user/#{name}"
+      end
+
+      def user_head_link(uuid, overlay, size)
+        if overlay
+          "https://crafatar.com/avatars/#{uuid}?overlay&size=#{size}"
+        else
+          "https://crafatar.com/avatars/#{uuid}?size=#{size}"
+        end
       end
     end
   end
