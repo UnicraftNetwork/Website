@@ -12,6 +12,9 @@
 /db/*.sqlite3-journal
 /db/*.sqlite3-*
 
+# Ignore database credentials file
+/config/database.yml
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
