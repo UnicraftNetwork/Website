@@ -4,7 +4,7 @@
 .staff-entry {
   display:block;
   text-align: center;
-  color: #666;
+  color: #999;
   margin-bottom:40px;
 }
 
@@ -51,4 +51,14 @@
 .staff-contact {
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.popover-body {
+  font-weight: bold;
+  background-color: #2E2F30 !important;
+  color: #bdbdbd !important;
+}
+
+.arrow:after {
+  border-bottom-color: #2E2F30 !important;
 }
