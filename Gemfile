@@ -53,6 +53,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Beautiful, beautiful, beautiful icons
 gem 'font-awesome-sass'
 
+# Used for some Minecraft-related operations
+gem 'uuidtools', '~> 2.1', '>= 2.1.5'
+
 # Retrieves up-to-date, minecraft player profiles's information
 gem 'minecraft-data', '~> 0.1.3'
 
