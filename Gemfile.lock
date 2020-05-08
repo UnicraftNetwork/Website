@@ -204,7 +204,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   font-awesome-sass
   jbuilder (~> 2.7)
-  json
+  json (~> 2.3)
   mysql2
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
@@ -213,7 +213,7 @@ DEPENDENCIES
   selenium-webdriver
   turbolinks (~> 5)
   tzinfo-data
-  uuidtools
+  uuidtools (~> 2.1, >= 2.1.5)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
