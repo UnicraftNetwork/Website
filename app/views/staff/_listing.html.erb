@@ -21,14 +21,14 @@
       <div class="col-md-3 col-sm-6 staff-entry">
         <a href="">
           <% if staff.uuid? %>
-            <img style="width: 90px; height: 90px; border-radius: 5px; background-color: black;" class="avatar" src="<%= StaffHelper::Mojang.user_head_link(staff.uuid, true, 90) %>"  alt=""/>
+            <img class="staff-head" src="<%= Minecraft::Data.head_url_of(staff.uuid, true, 90) %>"  alt=""/>
           <% else %>
-            <img style="width: 90px; height: 90px; border-radius: 5px; background-color: black;" class="avatar" src="<%= StaffHelper::Mojang.user_head_link(StaffHelper::Mojang::STEVE_UUID, false, 90) %>"  alt=""/>
+            <img class="staff-head" src="<%= Minecraft::Data.head_url_of(Minecraft::Data::STEVE_UUID, false, 90) %>"  alt=""/>
           <% end %>
         </a>
         <div class="staff-username">
           <% if staff.uuid? %>
-            <strong style="color: <%= group.colour_hex %>;"><%= StaffHelper::Mojang.uuid_to_username(staff.uuid) %></strong>
+            <strong style="color: <%= group.colour_hex %>;"><%= Minecraft::Data.uuid_to_username(staff.uuid) %></strong>
           <% else %>
             <strong style="color: <%= group.colour_hex %>;"><%= staff.nick %></strong>
           <% end %>
