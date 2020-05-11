@@ -39,9 +39,14 @@ hr {
 }
 
 .list-group-item {
-  border-radius: 2px;
-  border-color: transparent !important;
+  border-radius: 3px !important;
   background-color: transparent !important;
+  border-color: transparent !important;
+  margin-bottom: 3px;
+}
+
+.list-group-item:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
 .list-group a:hover {
