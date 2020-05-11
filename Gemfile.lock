@@ -217,6 +217,7 @@ DEPENDENCIES
   selenium-webdriver
   turbolinks (~> 5)
   tzinfo-data
+  uuidtools (~> 2.1, >= 2.1.5)
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
