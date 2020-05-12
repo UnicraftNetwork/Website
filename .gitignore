@@ -50,7 +50,7 @@ dependency-reduced-pom.xml
 .project
 .settings
 
-# IntelliJ IDEA
+# RubyMine
 .idea
 *.iml
 
