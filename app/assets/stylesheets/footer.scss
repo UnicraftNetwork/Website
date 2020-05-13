@@ -42,7 +42,7 @@ hr {
   border-radius: 3px !important;
   background-color: transparent !important;
   border-color: transparent !important;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .list-group-item:hover {
@@ -52,4 +52,9 @@ hr {
 .list-group a:hover {
   opacity: 0.8;
   color: white;
+}
+
+.list-group a:focus {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
