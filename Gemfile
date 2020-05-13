@@ -58,3 +58,6 @@ gem 'uuidtools', '~> 2.1', '>= 2.1.5'
 
 # Retrieves up-to-date, minecraft player profiles's information
 gem 'minecraft-data', '~> 0.1.3'
+
+# Production logging - Requires a workaround ActiveSupport::LoggerSilence
+gem 'rails_12factor'
