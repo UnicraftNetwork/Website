@@ -38,7 +38,7 @@
         </div>
         <div class="staff-social">
           <% if staff.email? %>
-            <a class="staff-contact" href="mailto: <%= staff.email %>">
+            <a style="cursor: pointer;" data-toggle="popover" data-content="<%= staff.email %>" data-placement="top">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </a>
           <% end %>
