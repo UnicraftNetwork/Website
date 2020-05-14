@@ -1,0 +1,36 @@
+// Place all the styles related to the towns controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-header .fa {
+  transition: 0.4s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(-90deg);
+}
+
+.card-header > a {
+  color: #beb8bc;
+}
+
+.card-header > a:hover {
+  color: #beb8bc;
+  text-decoration: none;
+  outline: none;
+}
+
+.card-header > a:focus {
+  color: whitesmoke;
+  text-decoration: none;
+  outline: none;
+}
+
+.resident-head {
+  border-radius: 3px;
+}
+
+.resident-entry {
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+}

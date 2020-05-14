@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   # Shop re-direct
   get "/shop" => redirect("https://udecesports.buycraft.net/")
 
+  # Towns
+  get 'towns' => 'towns#index'
+
   match '/404', to: 'errors#not_found', via: :all
   match '/422', to: 'errors#illegal', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
