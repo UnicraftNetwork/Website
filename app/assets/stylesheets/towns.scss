@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.card {
+  margin-bottom: 30px;
+}
+
 .card-header .fa {
   transition: 0.4s transform ease-in-out;
 }

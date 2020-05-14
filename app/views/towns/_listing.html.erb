@@ -11,12 +11,12 @@
         <div class="card bg-dark">
           <%= image_tag("towny_background.png", :alt => "logo", class: "card-img-top") %>
           <h5 class="card-header">
-            <a class="collapsed d-block" data-toggle="collapse" href="#collapse-collapsed" aria-expanded="true" aria-controls="collapse-collapsed" id="heading-collapsed">
+            <a class="collapsed d-block" data-toggle="collapse" href="#<%= town.name.gsub(' ', '-') %>" aria-expanded="true" aria-controls="collapse-collapsed" id="heading-collapsed">
               <i class="fa fa-chevron-down pull-right"></i>
               <%= town.name %>
             </a>
           </h5>
-          <div id="collapse-collapsed" class="collapse" aria-labelledby="heading-collapsed">
+          <div id="<%= town.name.gsub(' ', '-') %>" class="collapse" aria-labelledby="heading-collapsed">
             <div class="card-body text-white">
               <hr/>
               <% unless town.nation.eql?('') %>
