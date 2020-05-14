@@ -9,7 +9,7 @@
     <% @towns.each do |town| %>
       <div class="col-md-4">
         <div class="card bg-dark">
-          <%= image_tag("towny_background.png", :alt => "logo", class: "card-img-top") %>
+          <%= image_tag("towny_background.png", class: "card-img-top") %>
           <h5 class="card-header">
             <a class="collapsed d-block" data-toggle="collapse" href="#<%= town.name.gsub(' ', '-') %>" aria-expanded="true" aria-controls="collapse-collapsed" id="heading-collapsed">
               <i class="fa fa-chevron-down pull-right"></i>
@@ -33,7 +33,7 @@
                 <% begin @mayor_uuid = Minecraft::Data.username_to_uuid(town.mayor) %>
                   <img class="resident-head" src="<%= Minecraft::Data.head_url_of(@mayor_uuid, true, 26) %>" title="<%= town.mayor %>" alt="">
                   <% rescue %>
-                  <img class="resident-head" src="<%=  Minecraft::Data.head_url_of(Minecraft::Data::STEVE_UUID, false, 26) %>" alt="">
+                  <%= image_tag("fallback_head_small.png", class: 'resident-head') %>
                 <% end %>
                 <b><%= town.mayor %></b>
               </p>
@@ -47,7 +47,7 @@
                       <% begin @resident_uuid = Minecraft::Data.username_to_uuid(resident) %>
                         <img class="resident-head" src="<%=  Minecraft::Data.head_url_of(@resident_uuid, true, 26) %>" alt="">
                         <% rescue %>
-                        <img class="resident-head" src="<%=  Minecraft::Data.head_url_of(Minecraft::Data::STEVE_UUID, false, 26)  %>" alt="">
+                        <%= image_tag("fallback_head_small.png", class: 'resident-head') %>
                       <% end %>
                     </a>
                   </div>
