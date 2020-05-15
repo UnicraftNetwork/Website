@@ -20,7 +20,7 @@
     <% group.staffs.each do |staff| %>
       <div class="col-md-3 col-sm-6 staff-entry">
         <a href="">
-          <img class="staff-head" src="<%= Minecraft::Data.head_url_of_uuid(staff.uuid) %>"  alt="https://api.ashcon.app/mojang/v2/avatar/Steve"/>
+          <img class="staff-head" src="<%= Minecraft::Data.head_url_of_uuid(staff.uuid) %>"  alt=""/>
         </a>
         <div class="staff-username">
           <% if staff.uuid? %>
