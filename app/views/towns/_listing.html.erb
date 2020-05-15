@@ -30,12 +30,9 @@
                 </p>
               <% end %>
               <p><b>Alcalde: </b>
-                <% begin @mayor_uuid = Minecraft::Data.username_to_uuid(town.mayor) %>
-                  <img class="resident-head" src="<%= Minecraft::Data.head_url_of(@mayor_uuid, true, 26) %>" title="<%= town.mayor %>" alt="">
-                  <% rescue %>
-                  <%= image_tag("fallback_head_small.png", class: 'resident-head') %>
-                <% end %>
-                <b><%= town.mayor %></b>
+                <a style="cursor: pointer" data-toggle="popover" data-content="<%=  town.mayor  %>" data-placement="top">
+                  <img class="mayor-entry" src="<%= Minecraft::Data.head_url_of_username(town.mayor) %>" title="<%= town.mayor %>" alt="https://api.ashcon.app/mojang/v2/avatar/Steve">
+                </a>
               </p>
               <hr/>
               <p><b>Residentes: </b>
@@ -44,11 +41,7 @@
                 <% town.residents.split('#') do |resident| %>
                   <div class="col-md-1 col-sm-6 resident-entry">
                     <a style="cursor: pointer" data-toggle="popover" data-content="<%=  resident  %>" data-placement="top">
-                      <% begin @resident_uuid = Minecraft::Data.username_to_uuid(resident) %>
-                        <img class="resident-head" src="<%=  Minecraft::Data.head_url_of(@resident_uuid, true, 26) %>" alt="">
-                        <% rescue %>
-                        <%= image_tag("fallback_head_small.png", class: 'resident-head') %>
-                      <% end %>
+                      <img src="<%= Minecraft::Data.head_url_of_username(resident) %>" alt="https://api.ashcon.app/mojang/v2/avatar/Steve">
                     </a>
                   </div>
                 <% end %>

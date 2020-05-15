@@ -29,7 +29,9 @@
   outline: none;
 }
 
-.resident-head {
+.mayor-entry {
+  height: 26px;
+  width: 26px;
   border-radius: 3px;
 }
 
@@ -37,4 +39,10 @@
   display: block;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.resident-entry img {
+  height: 26px;
+  width: 26px;
+  border-radius: 3px;
 }
