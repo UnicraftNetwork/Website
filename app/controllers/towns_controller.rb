@@ -1,5 +1,5 @@
 class TownsController < ApplicationController
   def index
-    @towns = Town.order(:conquered).sort { |a, b| b[:bar] <=> a[:bar] }
+    @towns = Town.order(:residents).sort { |a, b| b[:residents] <=> a[:residents] }
   end
 end
