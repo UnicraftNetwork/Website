@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="tooltip"]').tooltip();
     });
 </script>
 
@@ -30,8 +30,8 @@
                 </p>
               <% end %>
               <p><b>Alcalde: </b>
-                <a style="cursor: pointer" data-toggle="popover" data-content="<%= town.mayor %>" data-placement="top">
-                  <img class="mayor-entry" src="<%= Minecraft::Data.head_url_of_username(town.mayor) %>" title="<%= town.mayor %>" alt="">
+                <a data-toggle="tooltip" title="<%= town.mayor %>" data-placement="top">
+                  <img class="mayor-entry" src="<%= Minecraft::Data.head_url_of_username(town.mayor) %>" alt="">
                 </a>
               </p>
               <hr/>
@@ -40,7 +40,7 @@
               <div class="row">
                 <% town.residents.split('#') do |resident| %>
                   <div class="col-md-1 col-sm-6 resident-entry">
-                    <a style="cursor: pointer" data-toggle="popover" data-content="<%= resident %>" data-placement="top">
+                    <a data-toggle="tooltip" title="<%= resident %>" data-placement="top">
                       <img src="<%= Minecraft::Data.head_url_of_username(resident) %>" alt="">
                     </a>
                   </div>
