@@ -18,6 +18,9 @@ module GalleryHelper
                          'https://i.imgur.com/rFKItIy.png',
                          'https://i.imgur.com/eOx7t4O.png',
                          'https://i.imgur.com/zCa8StH.png',
-                         'https://i.imgur.com/etTve3K.png'
+                         'https://i.imgur.com/etTve3K.png',
+                         'https://i.imgur.com/AXdhP36.png',
+                         'https://i.imgur.com/dquOIC9.png',
+                         'https://i.imgur.com/iWBWoyy.png'
   ]
 end
