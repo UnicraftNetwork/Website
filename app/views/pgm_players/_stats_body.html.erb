@@ -1,0 +1,23 @@
+<% @players.each do |player| %>
+  <tr>
+    <td><%= PgmPlayer.order('kills DESC').collect(&:uuid).index(player.uuid) + 1 %></td>
+    <td><%= player.kills %></td>
+    <td><%= player.deaths %></td>
+
+    <% if player.deaths == 0 %>
+      <td><%= player.kills %></td>
+    <% else %>
+      <td><%= number_with_precision(player.kills / player.deaths.to_f, :precision => 3) %></td>
+    <% end %>
+
+    <% if player.killed == 0 %>
+      <td><%= player.kills %></td>
+    <% else %>
+      <td><%= number_with_precision(player.kills / player.killed.to_f, :precision => 3) %></td>
+    <% end %>
+
+    <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(player.uuid) %>" alt=""> <%= player.nick %></td>
+
+  </tr>
+<% end %>
+

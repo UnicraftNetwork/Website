@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   # Towns
   get 'towns' => 'towns#index'
 
+  # PGM
+  get 'stats' => 'pgm_players#index'
+
   match '/404', to: 'errors#not_found', via: :all
   match '/422', to: 'errors#illegal', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all

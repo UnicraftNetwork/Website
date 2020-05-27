@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Estadísticas</h1>
+
+  <hr/>
+  <br/>
+
+  <%= paginate @players %>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th width="5%">#</th>
+        <th width="15%">Kills</th>
+        <th width="15%">Deaths</th>
+        <th width="15%">KD Ratio</th>
+        <th width="15%">KK Ratio</th>
+        <th width="35%">Usuario</th>
+      </tr>
+    </thead>
+    <tbody id="users">
+      <%= render partial: 'pgm_players/stats_body'%>
+    </tbody>
+  </table>
+
+  <%= paginate @players %>
+
+  <br/>
+  <hr/>
+</div>
+
