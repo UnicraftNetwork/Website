@@ -52,7 +52,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Beautiful, beautiful, beautiful icons
+# Up-to-date beautiful, beautiful, beautiful icons
 gem 'font-awesome-sass'
 
 # Used for some Minecraft-related operations
