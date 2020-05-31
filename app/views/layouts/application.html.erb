@@ -62,8 +62,10 @@
   <body>
     <%= render partial: "navigation/nav" %>
 
-    <div class="flash" style="margin-top: 100px;">
-    </div>
+    <% unless current_page?(:controller => 'public') or current_page?(:controller => 'el_medievo') %>
+      <div class="flash" style="margin-top: 34px;">
+      </div>
+    <% end %>
 
     <%= yield %>
 
