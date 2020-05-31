@@ -1,6 +1,8 @@
 <% @players.each do |player| %>
+  <% @count += 1 %>
+
   <tr>
-    <td><%= PgmPlayer.order('kills DESC').collect(&:uuid).index(player.uuid) + 1 %></td>
+    <td><%= @count - 1 %></td>
     <td><%= player.kills %></td>
     <td><%= player.deaths %></td>
 
