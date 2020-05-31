@@ -86,6 +86,8 @@ tbody {
   color: #beb8bc;
 }
 
+// Kaminari's style overrides
+
 .pagination a, .pagination span.current, .pagination span.gap {
   float: left;
   padding: 0 14px;
@@ -93,6 +95,9 @@ tbody {
   text-decoration: none;
   border-left-width: 0;
   color: #beb8bc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pagination a {
