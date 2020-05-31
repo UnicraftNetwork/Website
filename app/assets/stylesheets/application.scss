@@ -43,10 +43,18 @@ body {
 }
 
 .navbar-nav > li > .dropdown-menu a {
+  color: #beb8bc;
+}
+
+.navbar-nav > li > .dropdown-menu a:hover {
   color: whitesmoke;
 }
 
 .navbar-nav > li > .dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-nav > li > .dropdown-menu a:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
 

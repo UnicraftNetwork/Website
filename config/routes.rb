@@ -26,14 +26,15 @@ Rails.application.routes.draw do
   # Contact
   get 'contact' => 'application#contact'
 
-  # Shop re-direct
-  get "/shop" => redirect("https://udecesports.buycraft.net/")
-
   # Towns
   get 'towns' => 'towns#index'
 
   # PGM
+  get 'pgm' => 'pgm#index'
   get 'stats' => 'pgm_players#index'
+
+  # Shop re-direct
+  get "/shop" => redirect("https://udecesports.buycraft.net/")
 
   match '/404', to: 'errors#not_found', via: :all
   match '/422', to: 'errors#illegal', via: :all
