@@ -1,7 +1,23 @@
 <div class="container">
   <h2>
     Estadísticas
-    <small> Ordenadas por mayoría de <strong>Kills</strong></small>
+    <small style="font-size: 70%;">
+      Ordenadas por:
+      <!-- Due to a weird behaviour when using css, this styles declaration for <select/>
+       remains beneath, along with the usual evasion of <label/> due to the misplacement of elements
+       -->
+      <select style="border-color: gray; color: #bdbdbd; background-color: #212121; display: inline-block; width: 10%; cursor: pointer;"
+              id="sorter" class="form-control boop">
+        <% @sorts.each do |key, label| %>
+          <% if params[:sort].eql?(key.to_s) %>
+            <option selected="selected" label="<%= label %>" value="<%= full_url_for :sort => key %>"><%= label %></option>
+          <% else %>
+            <option label="<%= label %>" value="<%= full_url_for :sort => key %>"><%= label %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </small>
+
   </h2>
 
   <hr/>
@@ -31,3 +47,11 @@
   <hr/>
 </div>
 
+<script type="text/javascript">
+  let select = document.getElementById('sorter');
+
+  select.onchange = function () {
+      let option = this.options[this.selectedIndex];
+      window.location.replace(option.value)
+  }
+</script>
