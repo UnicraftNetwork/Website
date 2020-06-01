@@ -48,10 +48,10 @@
 </div>
 
 <script type="text/javascript">
-  let select = document.getElementById('sorter');
+  var select = document.getElementById('sorter');
 
   select.onchange = function () {
-      let option = this.options[this.selectedIndex];
+      var option = this.options[this.selectedIndex];
       window.location.replace(option.value)
   }
 </script>
