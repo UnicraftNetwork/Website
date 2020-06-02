@@ -6,7 +6,7 @@
       <!-- Due to a weird behaviour when using css, this styles declaration for <select/>
        remains beneath, along with the usual evasion of <label/> due to the misplacement of elements
        -->
-      <select style="border-color: gray; color: #bdbdbd; background-color: #212121; display: inline-block; width: 10%; cursor: pointer;"
+      <select style="border-color: gray; color: #bdbdbd; background-color: #212121; display: inline-block; width: 100px; cursor: pointer;"
               id="sorter" class="form-control boop">
         <% @sorts.each do |key, label| %>
           <% if params[:sort].eql?(key.to_s) %>
