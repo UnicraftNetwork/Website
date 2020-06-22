@@ -45,3 +45,6 @@ xcuserdata
 # Ignore production scripts
 start.sh
 restart.sh
+
+# Ignore database file
+database.yml
