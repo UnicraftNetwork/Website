@@ -5,14 +5,14 @@
         Reglamento Global
       </h2>
       <h6>Última modificación:
-        <%= RulesHelper::LAST_MODIFIED %>
+        <%= RulesHelper::Rules::LAST_MODIFIED %>
       </h6>
       <h6>Autor:
-        <%= RulesHelper::AUTHOR %>
+        <%= RulesHelper::Rules::AUTHOR %>
       </h6>
       <h6>Editores:
-        <% RulesHelper::EDITORS.each do |editor| %>
-          <% if RulesHelper::EDITORS.last.equal?(editor) %>
+        <% RulesHelper::Rules::EDITORS.each do |editor| %>
+          <% if RulesHelper::Rules::EDITORS.last.equal?(editor) %>
             <%= editor %>
           <% else %>
             <%= editor %>,

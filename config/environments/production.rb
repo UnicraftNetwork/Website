@@ -25,8 +25,9 @@ Rails.application.configure do
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # Compile assets for production display
+  config.assets.compile = true
+  # config.assets.precompile =  ['*.js', '*.css', '*.css.erb']
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
@@ -58,7 +59,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "UdeC_Craft_production"
+  # config.active_job.queue_name_prefix = "Forums_production"
 
   config.action_mailer.perform_caching = false
 
@@ -88,6 +89,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Gracefully handle website exceptions such as 404, 422 & 500. All through the ErrorsController
+  config.exceptions_app = routes
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector

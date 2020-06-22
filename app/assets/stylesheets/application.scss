@@ -1,156 +1,95 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- */
-
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "footer";
 @import "navigation";
-@import "public";
+@import "footer";
 @import "rules";
+@import "pgm";
 @import "staff";
-@import "tos";
-@import "el_medievo";
-@import "errors";
-@import "gallery";
 @import "towns";
-@import "pgm_players";
-
-@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import "gallery";
 
 body {
   background-color: #333333;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.navbar-nav > li > .dropdown-menu {
-  background-color: #212121;
+// Splash Landing
+main {
+  background-color: #333333;
 }
 
-.nav-item:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 3px;
+main p {
+  color: #e5d6e1;
 }
 
-.navbar-nav > li > .dropdown-menu a {
-  color: #beb8bc;
+.display-3 {
+  letter-spacing: -3px;
+  color: whitesmoke;
+  margin-top: 60px;
+  text-shadow: 0.1em 0.1em 0.2em black;
 }
 
-.navbar-nav > li > .dropdown-menu a:hover {
+.sub-display-3 {
+  font-size: 25px;
+  color: whitesmoke;
+  text-shadow: 0.1em 0.1em 0.3em black;
+}
+
+.site-description h2 {
   color: whitesmoke;
 }
 
-.navbar-nav > li > .dropdown-menu a:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navbar-nav > li > .dropdown-menu a:focus {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navbar-toggler-icon {
-  width: 1rem;
-}
-
-.navbar-dark .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.31);
-}
-
-.navbar-dark .navbar-toggler:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  margin-right: 4px;
-}
-
-i {
-  margin-left: 4px;
-}
-
-thead {
+.site-description p {
+  font-size: 18px;
   color: #bdbdbd;
 }
 
-tbody {
-  color: #beb8bc;
+.site-description img {
+  height: 250px;
+  width: 250px;
+  border-radius: 5px;
+  border: 2px solid #e2e2e2;
 }
 
-// Kaminari's style overrides
-
-.pagination a, .pagination span.current, .pagination span.gap {
-  float: left;
-  padding: 0 14px;
-  line-height: 38px;
-  text-decoration: none;
-  border-left-width: 0;
-  color: #beb8bc;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+input {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  color: whitesmoke;
+  background-color: #0088cc;
+  margin: 0;
 }
 
-.pagination a {
-  border: 1px solid gray;
+.ip input {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  color: #ffffff;
+  background-color: transparent;
+  padding: 20px;
+  margin: 0;
 }
 
-.pagination a:hover {
-  color: #dee2e6;
-  border: 1px solid gray;
+.ip input:hover {
+  cursor: pointer;
 }
 
-.pagination {
-  // border-left: 1px solid #ddd;
-  .first {
-    padding : 0;
-    float: none;
-    border: none;
-  }
-  .prev {
-    padding : 0;
-    float: none;
-    border: none;
-  }
-  .page {
-    padding : 0;
-    float: none;
-    border: none;
-  }
-  .next {
-    padding : 0;
-    float: none;
-    border: none;
-  }
-  .last {
-    padding : 0;
-    float: none;
-    border: none;
-  }
-
-  .page-item.active .page-link {
-    background-color: #1e1e1e;
-  }
-
-  .page-item .page-link {
-    background-color: #212121;
-  }
-
-  .page-item.disabled {
-    cursor: not-allowed;
-    a {
-      color: #beb8bc;
-      border: 1px solid gray;
-    }
-  }
+.ip .label {
+  font-weight: bold !important;
+  font-size: 14px !important;
 }
 
+.col-md-4 {
+  margin-bottom: 15px;
+}

@@ -7,17 +7,17 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module ORG
-  NAME = "UdeC Craft"
-  DOMAIN = "udecesports.com"
+  NAME = 'UdeC Craft'
+  DOMAIN = 'udecesports.com'
   SHOP = "shop.#{DOMAIN}"
 end
 
-module UdeCCraft
+module Forums
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # Gracefully handle website errors, such as 404, 442 & 502
+    # Gracefully handle website exceptions such as 404, 422 & 500. All through the ErrorsController
     config.exceptions_app = routes
 
     # Settings in config/environments/* take precedence over those specified here.

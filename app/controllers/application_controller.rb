@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
-  def contact
+  def index
   end
 end

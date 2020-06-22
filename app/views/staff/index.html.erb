@@ -13,7 +13,57 @@
 
   </section>
 
-  <%= render partial: "staff/listing" %>
+  <% @groups.each do |group| %>
+    <% next if group.staffs.count.eql?(0) %>
+    <div class="row">
+      <div class="col-md-12">
+        <h3 style="color: <%= group.colour_hex %>;"><%= group.name %>
+          <small><%= group.staffs.count %></small>
+        </h3>
+        <hr/>
+        <br/>
+      </div>
+    </div>
+
+    <div class="row">
+      <% group.staffs.each do |staff| %>
+        <div class="col-md-3 col-sm-6 staff-entry">
+          <a href="">
+            <img class="staff-head" src="<%= Minecraft::Data.head_url_of_uuid(staff.uuid) %>"  alt=""/>
+          </a>
+          <div class="staff-username">
+            <% if staff.uuid? %>
+              <strong style="color: <%= group.colour_hex %>;"><%= Minecraft::Data.uuid_to_username(staff.uuid) %></strong>
+            <% else %>
+              <strong style="color: <%= group.colour_hex %>;"><%= staff.nick %></strong>
+            <% end %>
+          </div>
+          <div class="staff-role">
+            <%= staff.role %>
+          </div>
+          <div class="staff-social">
+            <% if staff.email? %>
+              <a style="cursor: pointer;" data-toggle="popover" data-content="<%= staff.email %>" data-placement="top">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            <% end %>
+            <% if staff.discord? %>
+              <a style="cursor: pointer;" data-toggle="popover" data-content="<%= staff.discord %>" data-placement="bottom">
+                <i class="fab fa-discord" aria-hidden="true"></i>
+              </a>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <hr/>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+

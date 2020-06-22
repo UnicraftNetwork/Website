@@ -1,0 +1,2 @@
+class PgmRecord < ApplicationRecord
+end

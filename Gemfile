@@ -7,8 +7,8 @@ ruby '2.6.5'
 gem 'kaminari', '~> 1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-# Use mysql2 as the database for Active Record
-gem 'mysql2'
+# Use MySQL as the database for Active Record
+gem 'mysql2', '~> 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -19,7 +19,6 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-gem 'json', '~> 2.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -52,14 +51,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Up-to-date beautiful, beautiful, beautiful icons
-gem 'font-awesome-sass'
-
-# Used for some Minecraft-related operations
-gem 'uuidtools', '~> 2.1', '>= 2.1.5'
+# Up-to-date font-awesome icons
+gem 'font-awesome-sass', '~> 5.13'
 
 # Retrieves up-to-date, minecraft player profiles's information
 gem 'minecraft-data', '~> 0.2.0'
-
-# Production logging - Requires a workaround ActiveSupport::LoggerSilence
-gem 'rails_12factor'

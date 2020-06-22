@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_220009) do
+ActiveRecord::Schema.define(version: 2020_06_21_040702) do
 
-  create_table "group_staffs", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "group_staffs", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.bigint "group_id"
     t.bigint "staff_id"
     t.datetime "created_at", precision: 6, null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_220009) do
     t.index ["staff_id"], name: "index_group_staffs_on_staff_id"
   end
 
-  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "identifier"
     t.string "name"
     t.string "colour_hex"
@@ -30,7 +30,20 @@ ActiveRecord::Schema.define(version: 2020_04_19_220009) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "pgm_records", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.string "uuid", limit: 36
+    t.string "nick", limit: 16
+    t.integer "kills"
+    t.integer "deaths"
+    t.integer "killed"
+    t.decimal "kd", precision: 3
+    t.decimal "kk", precision: 3
+    t.integer "wools"
+    t.integer "monuments"
+    t.integer "cores"
+  end
+
+  create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "uuid"
     t.string "nick"
     t.string "role"

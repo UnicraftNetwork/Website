@@ -1,0 +1,50 @@
+<style>
+  .jumbotron {
+    background-image: url('<%= image_url('splash.png') %>');
+    background-position: center;
+    height: 500px;
+    margin-bottom: 0 !important;
+  }
+</style>
+
+<main role="main">
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3"><%= ORG::NAME %></h1>
+      <div class="sub-display-3">
+        <p>El hogar de la UdeC, en Minecraft.</p>
+      </div>
+      <a class="btn btn-success btn-lg ip">
+        <!-- No label was used to avoid button's misplacement -->
+        <input onClick="this.select();" readonly="<%= true %>" type="text" value="play.udecesports.com"/>
+      </a>
+    </div>
+  </div>
+  <div style="background-color: #212121; width: auto; height: 60px;">
+  </div>
+  <div class="container">
+    <br/>
+    <br/>
+    <div class="site-description">
+      <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5">
+          <h2>UdeC Craft</h2>
+          <p>¡El servidor de Mincraft en donde se está recreando la Universidad de Concepción y sus alrededores! Servidor en el cual, además, encontrarás modalidades como Project Ares, Towny, y SkyBlock para jugar con tus amigos y pasar un buen rato.</p>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
+          <div class="logo-large">
+            <%= image_tag("logo.png", :alt => "logo") %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <hr/>
+
+  </div>
+</main>

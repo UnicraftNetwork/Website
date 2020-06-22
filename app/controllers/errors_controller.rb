@@ -4,6 +4,6 @@ class ErrorsController < ApplicationController
 
   def illegal; end
 
-  def internal_server_error; end
+  def internal_error; end
 
 end

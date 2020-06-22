@@ -1,0 +1,47 @@
+<div class="table-responsive">
+
+  <%= paginate @pgm_records %>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th width="3%">#</th>
+      <th>Kills</th>
+      <th>Deaths</th>
+      <th>KD Ratio</th>
+      <th>KK Ratio</th>
+      <th width="50%">Usuario</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @pgm_records.each do |record| %>
+        <% @count += 1 %>
+
+        <tr>
+          <td><%= @count - 1 %></td>
+          <td><%= record.kills %></td>
+          <td><%= record.deaths %></td>
+
+          <% if record.deaths == 0 %>
+            <td><%= record.kills %>.000</td>
+          <% else %>
+            <td><%= number_with_precision(record.kills.to_f / record.deaths.to_f, :precision => 3) %></td>
+          <% end %>
+
+          <% if record.killed == 0 %>
+            <td><%= record.kills %>.000</td>
+          <% else %>
+            <td><%= number_with_precision(record.kills.to_f / record.killed.to_f, :precision => 3) %></td>
+          <% end %>
+
+          <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt=""> <%= record.nick %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @pgm_records %>
+
+</div>
+
