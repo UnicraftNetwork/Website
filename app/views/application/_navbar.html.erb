@@ -32,6 +32,21 @@
           <a class="nav-link" href="https://udecesports.buycraft.net/" data-target="#" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Tienda</a>
         </li>
       </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"><i class="fa fa-user"></i><b class="caret"></b></a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <% if user_signed_in? %>
+              <%= link_to 'Mi cuenta', edit_user_registration_path, :class => 'dropdown-item' %>
+              <%= link_to "Contrseña", edit_user_password_path, :class => 'dropdown-item' %>
+              <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
+            <% else %>
+              <a class="dropdown-item" href="/login">Ingresar</a>
+              <a class="dropdown-item" href="/register">Registrarme</a>
+            <% end %>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

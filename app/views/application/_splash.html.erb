@@ -16,7 +16,7 @@
       </div>
       <a class="btn btn-success btn-lg ip">
         <!-- No label was used to avoid button's misplacement -->
-        <input onClick="this.select();" readonly="<%= true %>" type="text" value="play.udecesports.com"/>
+        <input onClick="this.select();" readonly="<%= true %>" type="text" value="play.<%= ORG::DOMAIN %>"/>
       </a>
     </div>
   </div>
@@ -25,12 +25,13 @@
   <div class="container">
     <br/>
     <br/>
+    <%= render :partial => 'alerts' %>
     <div class="site-description">
       <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-5">
-          <h2>UdeC Craft</h2>
+          <h2><%= ORG::NAME %></h2>
           <p>¡El servidor de Mincraft en donde se está recreando la Universidad de Concepción y sus alrededores! Servidor en el cual, además, encontrarás modalidades como Project Ares, Towny, y SkyBlock para jugar con tus amigos y pasar un buen rato.</p>
         </div>
         <div class="col-md-2">

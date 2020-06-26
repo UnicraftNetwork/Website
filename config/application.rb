@@ -20,6 +20,9 @@ module Forums
     # Gracefully handle website exceptions such as 404, 422 & 500. All through the ErrorsController
     config.exceptions_app = routes
 
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+    config.i18n.default_locale = 'es'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

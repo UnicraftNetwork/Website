@@ -1,0 +1,40 @@
+es:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Debes ingresar un correo válido"
+              taken: "Este correo ya está en uso"
+              invalid: "Email inválido"
+            password:
+              blank: "Debes ingresar una cotnraseña"
+              confirmation: "Las contraseñas no coinciden"
+              too_short: "La contraseña es demasiado corta"
+            password_confirmation:
+              blank: "Debes confirmar tu contraseña"
+              confirmation: "Las contraseñas no coinciden"
+            first_name:
+              blank: "Debes ingresar un nombre"
+            last_name:
+              blank: "Debes ingresar un apellido"
+        pdf:
+          attributes:
+            name:
+              blank: "Debes ingresar un nombre para PDF"
+              taken: "Ese nombre de PDF ya está tomado"
+            attachment:
+              blank: "Por favor, sube un archivo PDF"
+        data_element:
+          attributes:
+            name:
+              blank: "Debes darle un nombre al elemento"
+              taken: "Ya existe un elemento con ese nombre"
+            color:
+              blank: "Debes asignarle un color al elemento"
+        template:
+          attributes:
+            name:
+              blank: "Debes ingresar un nombre"
+              taken: "Ese nombre ya está tomado"
