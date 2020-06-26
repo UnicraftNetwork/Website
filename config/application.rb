@@ -10,6 +10,7 @@ module ORG
   NAME = 'UdeC Craft'
   DOMAIN = 'udecesports.com'
   SHOP = "shop.#{DOMAIN}"
+  EMAIL = "support@#{DOMAIN}"
 end
 
 module Forums
