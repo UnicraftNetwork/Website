@@ -20,6 +20,12 @@ i {
 }
 
 .navbar-nav > li > .dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+}
+
+.navbar-nav > li > .dropdown-menu a:focus {
+  background-color: rgba(0, 0, 0, 0.5);
   color: whitesmoke;
 }
 
@@ -31,10 +37,6 @@ i {
 .navbar-dark .navbar-nav .nav-link:focus {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3px;
-}
-
-.navbar-nav > li > .dropdown-menu a:hover {
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .navbar-toggler-icon {
