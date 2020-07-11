@@ -9,10 +9,17 @@
 @import "towns";
 @import "gallery";
 @import "devise";
+@import "kaminari";
+@import "forums";
+@import "thredded";
 
 body {
   background-color: #333333;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+hr {
+  background-color: #bdbdbd;
 }
 
 // Splash Landing

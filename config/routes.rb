@@ -8,8 +8,11 @@ Rails.application.routes.draw do
       sign_up: 'register'
   },
   controllers: {
-      :confirmations => 'confirmations'
+      confirmations: 'confirmations',
+      registrations: 'registrations'
   }
+
+  mount Thredded::Engine => Forums::PATH
 
   get 'contact'     => 'application#contact'
 
@@ -29,7 +32,6 @@ Rails.application.routes.draw do
   get 'dashboard'   => 'dashboard#index'
 
   get 'shop'        => redirect('https://udecesports.buycraft.net/')
-  get 'users'       => redirect('/')
 
   match '404', to: 'errors#not_found', via: :all
   match '422', to: 'errors#illegal', via: :all

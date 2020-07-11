@@ -13,20 +13,20 @@
       <div class="col-md-4">
         <div class="form-group">
           <div class="input-group">
-            <%= f.email_field :email, autofocus: true, :placeholder => 'Nuevo email', autocomplete: "email", :class => 'form-control devise-form-field' %>
+            <%= f.email_field :email, autofocus: true, :placeholder => 'Nuevo email', :class => 'form-control devise-form-field' %>
           </div>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div class="devise-text-pleasant">
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-            Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+            Esperando confirmación para el correo: <%= resource.unconfirmed_email %>
           </div>
         <% end %>
 
         <div class="form-group">
           <div class="input-group">
-            <%= f.password_field :current_password, autocomplete: "current-password", :placeholder => 'Contraseña actual', :class => 'form-control devise-form-field' %>
+            <%= f.password_field :current_password, :placeholder => 'Contraseña actual', :class => 'form-control devise-form-field' %>
           </div>
         </div>
       </div>
@@ -35,10 +35,6 @@
     <div class="btn-toolbar">
       <div class="actions">
         <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
-      </div>
-      &nbsp;
-      <div class="action">
-        <%= link_to "Atrás", :back, :class => 'btn btn-primary btn-sm' %>
       </div>
     </div>
   <% end %>
@@ -54,9 +50,9 @@
         <div class="form-group">
           <div class="input-group">
             <% if @minimum_password_length %>
-              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Cambiar contraseña (#{@minimum_password_length} caracteres mínimo)", :class => 'form-control devise-form-field' %>
+              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Nueva contraseña (#{@minimum_password_length} caracteres mínimo)", :class => 'form-control devise-form-field' %>
             <% else %>
-              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Cambiar Contraseña", :class => 'form-control devise-form-field' %>
+              <%= f.password_field :password, autocomplete: "new-password", :placeholder => "Nueva contraseña", :class => 'form-control devise-form-field' %>
             <% end %>
           </div>
         </div>
@@ -80,10 +76,6 @@
       <div class="actions">
         <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
       </div>
-      &nbsp;
-      <div class="action">
-        <%= link_to "Atrás", :back, :class => 'btn btn-primary btn-sm' %>
-      </div>
     </div>
 
   <% end %>
@@ -94,5 +86,4 @@
   -->
 
   <br/>
-  <hr/>
 </div>

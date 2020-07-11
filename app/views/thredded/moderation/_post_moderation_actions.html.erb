@@ -1,0 +1,13 @@
+<div class="btn-group" role="group" aria-label="moderator-action-set">
+  <% unless post.approved? %>
+    <%= button_to t('thredded.moderation.approve_btn'), moderate_post_path,
+                  class:  'btn btn-sm btn-success',
+                  params: { id: post.to_model.id, moderation_state: 'approved' } %>
+  <% end %>
+  &nbsp;
+  <% unless post.blocked? %>
+    <%= button_to t('thredded.moderation.block_btn'), moderate_post_path,
+                  class:  'btn btn-sm btn-danger',
+                  params: { id: post.to_model.id, moderation_state: 'blocked' } %>
+  <% end %>
+</div>

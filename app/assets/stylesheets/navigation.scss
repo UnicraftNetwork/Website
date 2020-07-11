@@ -1,5 +1,11 @@
-i {
-  margin-left: 4px;
+.navbar-nav {
+  i {
+    margin-left: 4px;
+  }
+}
+
+.navbar-dark .navbar-brand {
+  color: #beb8bc;
 }
 
 .nav-bg {
@@ -8,10 +14,6 @@ i {
 
 .navbar-nav > li > .dropdown-menu {
   background-color: #212121;
-}
-
-.nav-item {
-  background-size: 600px, 600px;
 }
 
 .navbar-nav > li > .dropdown-menu a {
@@ -49,8 +51,4 @@ i {
 
 .navbar-dark .navbar-toggler:hover {
   background-color: rgba(0, 0, 0, 0.5);
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  margin-right: 4px;
 }

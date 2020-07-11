@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark nav-bg ">
+<nav class="navbar navbar-expand-lg navbar-dark nav-bg">
   <div class="container">
     <a class="navbar-brand" href="/">
       <%= image_tag("logo.png", :alt => "logo", style: "width: 40px; height: 40px; margin-right: 10px; border-radius: 5px;") %><%= ORG::NAME %>
@@ -9,17 +9,12 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="<%= rules_path %>"><i class="fa fa-bookmark" aria-hidden="true"></i> Reglas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= staff_path %>"><i class="fa fa-user-md" aria-hidden="true"></i> Staff</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/gallery"><i class="fa fa-camera" aria-hidden="true"></i> Galería</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%= towns_path %>"><i class="fa fa-home" aria-hidden="true"></i> Towns</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gavel" aria-hidden="true"></i> Moderación</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="<%= rules_path %>"><i class="fa fa-bookmark" aria-hidden="true"></i> Reglas</a>
+            <a class="dropdown-item" href="<%= staff_path %>"><i class="fa fa-user-md" aria-hidden="true"></i> Staff</a>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cubes" aria-hidden="true"></i> Project Ares</a>
@@ -29,16 +24,40 @@
           </div>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="<%= thredded_path %>"><i class="fa fa-comments" aria-hidden="true"></i> Foros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= gallery_path %>"><i class="fa fa-camera" aria-hidden="true"></i> Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= towns_path %>"><i class="fa fa-home" aria-hidden="true"></i> Towns</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="https://udecesports.buycraft.net/" data-target="#" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Tienda</a>
         </li>
       </ul>
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"><i class="fa fa-user"></i><b class="caret"></b></a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
             <% if user_signed_in? %>
-              <%= link_to 'Mi cuenta', edit_user_registration_path, :class => 'dropdown-item' %>
-              <%= link_to "Contrseña", edit_user_password_path, :class => 'dropdown-item' %>
+              <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+                  .render(partial: 'thredded/shared/nav/standalone_profile')
+              %>
+              <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+                  .render(partial: 'thredded/shared/nav/private_topics')
+              %>
+              <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+                  .render(partial: 'thredded/shared/nav/notification_preferences')
+              %>
+              <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+                  .render(partial: 'thredded/shared/nav/moderation')
+              %>
+              <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+                  .render(partial: 'thredded/shared/nav/messageboards')
+              %>
+              <hr style="margin-top: 5px; margin-bottom: 5px;"/>
+              <%= link_to 'Ajustes', edit_user_registration_path, :class => 'dropdown-item' %>
               <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
             <% else %>
               <a class="dropdown-item" href="/login">Ingresar</a>

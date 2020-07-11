@@ -7,7 +7,7 @@
        remains beneath, along with the usual evasion of <label/> due to the misplacement of elements
        -->
       <select style="border-color: gray; color: #bdbdbd; background-color: #212121; display: inline-block; width: 130px; cursor: pointer;"
-              id="sorter" class="form-control boop">
+              id="sorter" class="form-control">
         <% @sorts.each do |key, label| %>
           <% if params[:sort].eql?(key.to_s) %>
             <option selected="selected" label="<%= label %>" value="<%= full_url_for :sort => key %>"><%= label %></option>
@@ -26,7 +26,6 @@
   <%= render :partial => 'stats_table' %>
 
   <br/>
-  <hr/>
 </div>
 
 <script type="text/javascript">

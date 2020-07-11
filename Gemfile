@@ -2,12 +2,20 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
+
+# Slugs
+gem 'babosa', '~> 1.0', '>= 1.0.3'
 # Authentication
 gem 'devise', '~> 4.7', '>= 4.7.2'
+# Emojis
+gem 'gemoji', '~> 3.0', '>= 3.0.1'
 # Pagination
-gem 'kaminari', '~> 1.2'
+gem 'kaminari', '~> 1.2.1'
+gem 'kaminari-i18n', '~> 0.5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+# i18n
+gem 'rails-i18n', '~> 6.0'
 # Use MySQL as the database for Active Record
 gem 'mysql2', '~> 0.5.3'
 # Use Puma as the app server
@@ -48,6 +56,8 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
+
+gem 'thredded', '~> 0.16.16'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,0 +1,41 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th width="60%">Título</th>
+      <th width="25%">Último post</th>
+      <th width="10%"><div align="center">Posts</div></th>
+    </tr>
+    </thead>
+    <tbody>
+      <%= thredded_page do %>
+        <% @all_topics = [] %>
+
+        <% Thredded::MessageboardGroup.all.each do |group| %>
+          <% (group.messageboards.collect {|board| board.topics }).each do |topic_collection| %>
+            <% topic_collection.each do |topic| %>
+              <% @all_topics.push(topic) %>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <% @all_topics.sort_by(&:last_post_at).reverse!.each do |topic| %>
+          <tr>
+            <td>
+              <%= link_to topic.title, "#{Forums::PATH}/#{topic.messageboard.slug}/#{topic.slug}" %>
+              <br/>
+              <%= user_link(topic.user) %> ➔ <%= time_ago(topic.created_at) %> en <%= link_to topic.messageboard.name,  "#{Forums::PATH}/#{topic.messageboard.slug}" %>
+            </td>
+            <td>
+              <%= user_link topic.last_user %>
+              <br/>
+              <%= time_ago topic.last_post_at %>
+            </td>
+            <td><div align="center"><%= topic.posts_count %></div></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

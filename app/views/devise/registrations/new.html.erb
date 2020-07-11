@@ -8,6 +8,12 @@
       <div class="col-md-4">
         <div class="form-group">
           <div class="input-group">
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => 'Nombre (3 caracteres mínimo)', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => 'Email', :class => 'form-control devise-form-field' %>
           </div>
         </div>
@@ -39,5 +45,4 @@
   <%= render "devise/shared/links" %>
 
   <br/>
-  <hr/>
 </div>

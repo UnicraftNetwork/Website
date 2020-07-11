@@ -1,0 +1,50 @@
+<header class="thredded--topic-header">
+
+  <nav class="navbar navbar-expand-lg navbar-dark topic-toolbar">
+    <%= view_hooks.topic_page.title.render self, topic: topic do %>
+      <% if topic.locked? %>
+        <h3><%= link_to topic.title, topic.path %><small>, por <%= user_link(topic.user) %> <i data-toggle="tooltip" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
+        </small></h3>
+      <% else %>
+        <h3><%= link_to topic.title, topic.path %><small>, por <%= user_link(topic.user) %></small></h3>
+      <% end %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#forum-topic-toolbar" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-th-large"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="forum-topic-toolbar">
+      <ul class="navbar-nav ml-auto">
+        <% if topic.can_update? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= topic.edit_path %>" rel="nofollow"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> <%= t('thredded.topics.edit') %></a>
+          </li>
+        <% end %>
+        <% if topic.can_destroy? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= topic.destroy_path %>" data-method="delete" data-confirm="¿Seguro que queires eliminar este tema? Esta acción NO se puede deshacer."><i class="fa fa-trash-o" aria-hidden="true"></i> <%= t('thredded.topics.delete_topic') %></a>
+          </li>
+        <% end %>
+        <% if thredded_current_user %>
+          <% if topic.followed? %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= topic.unfollow_path %>" data-toggle="tooltip" title="<%= topic_follow_reason_text topic.follow_reason %>" data-placement="top"><i class="fa fa-bell-slash" aria-hidden="true"></i> <%= t('thredded.topics.unfollow') %></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= topic.follow_path %>" data-toggle="tooltip" title="<%= topic_follow_reason_text topic.follow_reason %>" data-placement="top"><i class="fa fa-bell" aria-hidden="true"></i> <%= t('thredded.topics.follow') %></a>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
+  <%= render partial: 'thredded/topics/followers', locals: {topic: topic} %>
+</header>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

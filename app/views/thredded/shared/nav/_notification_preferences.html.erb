@@ -1,0 +1,6 @@
+<% messageboard = messageboard_or_nil %>
+<%= link_to "Notificaciones",
+            Forums::PATH + edit_preferences_path(messageboard),
+            rel: 'nofollow',
+            :class => 'dropdown-item'
+%>

@@ -1,0 +1,46 @@
+// Sidebar
+.sidebar-nav-pills > ul > li > a,
+.sidebar-nav-pills > li > a {
+  position: relative;
+  display: block;
+  padding: 3px 10px;
+}
+
+.sidebar-nav-pills h4 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 8px 0px;
+}
+
+.sidebar-group-flash {
+  margin-bottom: 10px;
+}
+
+.sidebar-item > a {
+  text-decoration: none;
+  color: #beb8bc;
+}
+
+.sidebar-active-item {
+  background-color: #212121;
+  border-radius: 5px;
+}
+
+.topic-toolbar {
+  padding: 0;
+  margin-top: 10px;
+}
+
+.post-comment {
+  margin-bottom: 15px;
+}
+
+.post-reply-title {
+  margin-bottom: 10px;
+}
+
+.post-reply-textarea, .post-reply-textarea:focus {
+  border-color: transparent;
+  color: #e5d6e1;
+  resize: none !important;
+}

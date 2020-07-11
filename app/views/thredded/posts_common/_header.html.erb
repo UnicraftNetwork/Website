@@ -1,0 +1,11 @@
+<%# @param post [Thredded::PostView] %>
+<!-- A post by a user, at any topic -->
+<header>
+  <hr/>
+  <!-- <%= image_tag post.avatar_url, class: 'thredded--post--avatar' if post.user %> -->
+  <h5 class="post-comment">
+    <%= user_link post.user %>
+    <br/>
+    <small style="color: gray">posteó <%= time_ago post.created_at %></small>
+  </h5>
+</header>

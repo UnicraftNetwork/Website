@@ -1,0 +1,24 @@
+<%= content_tag :article,
+                id:    dom_id(topic),
+                data: {
+                    topic: topic.id,
+                    messageboard: topic.messageboard_id,
+                    unread: !topic.read? || nil,
+                    followed: topic.followed? || nil
+                } do %>
+
+  <tr>
+    <td>
+      <%= link_to topic.title, topic.path %>
+      <br/>
+      <%= user_link(topic.user) %> ➔ <%= time_ago(topic.created_at) %>
+     </td>
+    <td>
+      <%= user_link topic.last_user %>
+      <br/>
+      <%= time_ago topic.last_post_at %>
+    </td>
+    <td><div align="center"><%= topic.posts_count %></div></td>
+  </tr>
+
+<% end %>
