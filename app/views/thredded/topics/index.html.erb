@@ -33,23 +33,24 @@
 
   <%= paginate @topics %>
 
-  <p>
-    <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#new-topic-collapsible" role="button" aria-expanded="false" aria-controls="new-topic-collapsible">
-      Iniciar Nuevo Tema
-    </a>
-  </p>
-  <div class="collapse" id="new-topic-collapsible">
-    <hr/>
-    <%= content_tag :section,
-                    'data-thredded-topics' => true,
-                    'data-thredded-topic-posts-per-page' => Thredded.posts_per_page do
-    %>
-      <%= render 'thredded/topics/form',
-                 topic: @new_topic,
-                 placeholder: t('thredded.topics.form.title_placeholder_start') if @new_topic
+  <% if user_signed_in? %>
+    <p>
+      <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#new-topic-collapsible" role="button" aria-expanded="false" aria-controls="new-topic-collapsible">
+        Iniciar Nuevo Tema
+      </a>
+    </p>
+    <div class="collapse" id="new-topic-collapsible">
+      <hr/>
+      <%= content_tag :section,
+                      'data-thredded-topics' => true,
+                      'data-thredded-topic-posts-per-page' => Thredded.posts_per_page do
       %>
-    <% end %>
-  </div>
+        <%= render 'thredded/topics/form',
+                   topic: @new_topic,
+                   placeholder: t('thredded.topics.form.title_placeholder_start') if @new_topic
+        %>
+      <% end %>
+    </div>
+  <% end %>
 
 <% end %>
-
