@@ -60,8 +60,8 @@
               <%= link_to 'Ajustes', edit_user_registration_path, :class => 'dropdown-item' %>
               <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
             <% else %>
-              <a class="dropdown-item" href="/login">Ingresar</a>
-              <a class="dropdown-item" href="/register">Registrarme</a>
+              <%= link_to 'Ingresar', new_user_session_path, :class => 'dropdown-item' %>
+              <%= link_to 'Registrarme', new_user_registration_path, :class => 'dropdown-item' %>
             <% end %>
           </div>
         </li>
