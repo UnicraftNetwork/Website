@@ -1,6 +1,5 @@
 class PgmController < ApplicationController
-  def index
-  end
+  def index; end
 
   def stats
     params[:sort] ||= 'kills'

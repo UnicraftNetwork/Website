@@ -1,7 +1,9 @@
 <div class="sidebar hidden-xs">
   <ul class="navbar-nav nav-pills nav-stacked sidebar-nav-pills">
     <li><h4>Nuevo</h4></li>
-    <li class="sidebar-item <%= request.path.eql?("#{Forums::PATH}/") ? 'sidebar-active-item' : 'sidebar-inactive-item' %>"><a href="/forums">Recientes</a></li>
+    <li class="sidebar-item <%= request.path.eql?("#{Forums::PATH}/") ? 'sidebar-active-item' : 'sidebar-inactive-item' %>">
+      <%= link_to 'Recientes', Forums::PATH %>
+    </li>
 
     <% Thredded::MessageboardGroup.all.each do |group| %>
       <% next if group.messageboards.empty? %>
@@ -10,7 +12,9 @@
         <li><h4><%= group.name %></h4></li>
         <% group.messageboards.each do |messageboard| %>
           <% @category_path = "#{Forums::PATH}/#{messageboard.slug}" %>
-          <li class="sidebar-item <%= request.path.start_with?(@category_path) ? 'sidebar-active-item' : 'sidebar-inactive-item' %>"><%= link_to messageboard.name, @category_path %></li>
+          <li class="sidebar-item <%= request.path.start_with?(@category_path) ? 'sidebar-active-item' : 'sidebar-inactive-item' %>">
+            <%= link_to messageboard.name, @category_path %>
+          </li>
         <% end %>
         <div class="sidebar-group-flash"></div>
       <% end %>

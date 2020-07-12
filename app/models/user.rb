@@ -7,4 +7,8 @@ class User < ApplicationRecord
   validates :name, uniqueness: true, length: { minimum: 3, maximum: 16 }
 
   has_one :profile, dependent: :destroy
+
+  def to_param
+    name
+  end
 end

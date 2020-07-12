@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'application#index'
+  resources :users, path: 'u', param: :name
 
   devise_for :users, path: '/',
   path_names: {
