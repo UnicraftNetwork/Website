@@ -2,10 +2,23 @@
 <!-- A post by a user, at any topic -->
 <header>
   <hr/>
-  <!-- <%= image_tag post.avatar_url, class: 'thredded--post--avatar' if post.user %> -->
-  <h5 class="post-comment">
-    <%= user_link post.user %>
-    <br/>
-    <small style="color: gray">posteó <%= time_ago post.created_at %></small>
-  </h5>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="post-head">
+          <a href="<%= user_path post.user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>"></a>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <h5 class="post-comment">
+          <%= user_link post.user %>
+        </h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <p class="posted-time-ago">posteó <%= time_ago post.created_at %></p>
+      </div>
+    </div>
+  </div>
 </header>

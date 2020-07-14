@@ -22,14 +22,41 @@
         <% @all_topics.sort_by(&:last_post_at).reverse!.each do |topic| %>
           <tr>
             <td>
-              <%= link_to topic.title, "#{Forums::PATH}/#{topic.messageboard.slug}/#{topic.slug}" %>
-              <br/>
-              <%= user_link(topic.user) %> ➔ <%= time_ago(topic.created_at) %> en <%= link_to topic.messageboard.name,  "#{Forums::PATH}/#{topic.messageboard.slug}" %>
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <%= link_to topic.title, "#{Forums::PATH}/#{topic.messageboard.slug}/#{topic.slug}" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6">
+                    <div class="post-head-preview">
+                      <a href="<%= user_path topic.user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>"></a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <%= link_to topic.user.name, user_path(topic.user), :class => 'poster-preview' %> ➔&nbsp;
+                  </div>
+                  <div class="col-xs-6">
+                    <%= time_ago(topic.created_at) %> en <%= link_to topic.messageboard.name,  "#{Forums::PATH}/#{topic.messageboard.slug}" %>
+                  </div>
+                </div>
+              </div>
             </td>
             <td>
-              <%= user_link topic.last_user %>
-              <br/>
-              <%= time_ago topic.last_post_at %>
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <div class="post-head-preview">
+                      <a href="<%= user_path topic.user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>"></a>
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <%= link_to topic.last_user.name, user_path(topic.last_user), :class => 'poster-preview' %>
+                  </div>
+                  <%= time_ago topic.last_post_at %>
+                </div>
+              </div>
             </td>
             <td><div align="center"><%= topic.posts_count %></div></td>
           </tr>
