@@ -1,3 +1,29 @@
 <div class="container">
-  <p><%= @user.profile %></p>
+  <% if current_user.name.eql?(@user.name) %>
+
+    <% if @user.uuid == nil %>
+
+      <p>You haven't linked your account yet</p>
+      <p>Run <code>/link <%= @user.minecraft_token %></code> in-game to link it!</p>
+
+    <% else %>
+
+      <p>You have linked your account</p>
+      <p>Content woohoo</p>
+
+    <% end %>
+
+  <% else %>
+
+    <% if current_user.uuid == nil %>
+
+      <p>This user hasn't linked their account yet</p>
+
+    <% else %>
+
+      <p>This user has linked their account</p>
+
+    <% end %>
+
+  <% end %>
 </div>

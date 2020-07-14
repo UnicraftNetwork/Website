@@ -10,6 +10,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       ## Username
       t.string :name, null: false, limit: 16
 
+      ## Minecraft UUID
+      # null: true => For profiles not yet linked to a Minecraft account.
+      t.string :uuid, null: true, limit: 36, unique: true
+      ## Minecraft Token
+      # null: true => For profiles effectively linked to a Minecraft account.
+      t.string :minecraft_token, null: true, unique: true
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
@@ -41,10 +48,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
 
-    add_index :users, :name,                 unique: true
-    add_index :users, :email,                unique: true
+    add_index :users, :name, unique: true
+    add_index :users, :uuid, unique: true
+    add_index :users, :minecraft_token, unique: true
+    add_index :users, :email, unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
+
     # add_index :users, :unlock_token,         unique: true
   end
 end

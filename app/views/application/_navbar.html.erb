@@ -38,7 +38,14 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
-          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#"><i class="fa fa-user"></i><b class="caret"></b></a>
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+            <% if user_signed_in? %>
+              <img class="profile-head-mini" src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>">
+            <% else %>
+              <i class="fa fa-user"></i>
+            <% end %>
+            <b class="caret"></b>
+          </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
             <% if user_signed_in? %>
               <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
