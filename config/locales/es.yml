@@ -174,7 +174,7 @@ es:
       form:
         content_label: Contenido
         create_btn: Responder
-        create_btn_submitting: SOS.......
+        create_btn_submitting: Enviando...
         title_label: Añadir una publicación
         update_btn: Actualizar Mensaje
         update_btn_submitting: :thredded.form.update_btn_submitting
