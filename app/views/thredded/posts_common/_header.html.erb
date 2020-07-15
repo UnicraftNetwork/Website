@@ -6,13 +6,30 @@
     <div class="row">
       <div class="col-xs-6">
         <div class="post-head">
-          <a href="<%= user_path post.user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>"></a>
+          <a href="<%= user_path post.user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(post.user.uuid) %>"></a>
         </div>
       </div>
       <div class="col-xs-6">
         <h5 class="post-comment">
           <%= user_link post.user %>
         </h5>
+      </div>
+
+      <div class="col">
+        <div class="pull-right">
+          <% if user_signed_in? %>
+            <div class="btn-toolbar" role="group" aria-label="per-post-action-buttons">
+              <%# FIXME: Functionality is kind of rusty, and needs rework. Remove this comment for testing.
+                =render 'thredded/posts_common/actions/quote', post: post
+              %>
+            <% if current_user.mod? or current_user.admin? or current_user == post.user %>
+                <%= render 'thredded/posts_common/actions/edit', post: post %>
+                &nbsp;
+                <%= render 'thredded/posts_common/actions/delete', post: post %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="row">

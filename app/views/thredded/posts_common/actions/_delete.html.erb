@@ -1,4 +1,7 @@
-<%= button_to t('thredded.posts.delete'), post.destroy_path,
+<%= button_to post.destroy_path,
               method: :delete,
-              class: 'thredded--post--delete thredded--post--dropdown--actions--item',
-              data: {confirm: I18n.t('thredded.posts.delete_confirm')} %>
+              class: 'btn btn-sm btn-danger post-action-button',
+              data: {confirm: I18n.t('thredded.posts.delete_confirm')} do
+%>
+  <i class="fa fa-trash" aria-hidden="true"></i><%= t('thredded.posts.delete') %>
+<% end %>

@@ -153,7 +153,7 @@ es:
     nav:
       all_messageboards: Todos los Foros
       edit_messageboard: Editar Foro
-      edit_post: Editar Mensaje
+      edit_post: "" # Editar Mensaje
       edit_private_topic: :thredded.nav.edit_topic
       edit_topic: Editar
       mark_all_read: Marcar todo como leído
@@ -167,7 +167,7 @@ es:
       unread_topics: No leído
     null_user_name: Usuario eliminado
     posts:
-      delete: Eliminar Mensaje
+      delete: "" # Eliminar mensaje
       delete_confirm: "¿Estás seguro de que quieres eliminar este mensaje?"
       deleted_notice: Tu mensaje ha sido eliminado.
       edit: :thredded.nav.edit_post
@@ -250,10 +250,10 @@ es:
     topics:
       create: :thredded.topics.form.create_btn
       delete_confirm: "¿Seguro que queires eliminar este tema? Esta acción NO se puede deshacer."
-      delete_topic: Eliminar Tema
+      delete_topic: "Eliminar" # Eliminar Tema
       deleted_notice: Tema eliminado
-      edit: Editar Tema
-      follow: Seguir este tema
+      edit: "Editar" # Editar Tema
+      follow: "Seguir" # Seguir este tema
       followed_by: 'Seguido por:'
       followed_by_noone: Nadie está siguiendo este tema
       followed_notice: Estás siguiendo este tema
@@ -287,7 +287,7 @@ es:
       started_by_html: Empezado hace %{time_ago} por %{user}
       sticky:
         label: Fijado
-      unfollow: Deja de seguir
+      unfollow: "No Seguir" # Dejar de seguir
       unfollowed_notice: Has dejado de seguir este tema
       updated_notice: Tema actualizado
     unread_topics:
