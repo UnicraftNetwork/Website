@@ -41,7 +41,7 @@
           <div class="col-xs-6">
             <%= link_to topic.last_user.name, user_path(topic.last_user), :class => 'poster-preview' %>
           </div>
-          <%= time_ago topic.last_post_at %>
+          &nbsp;<%= time_ago topic.last_post_at %>
         </div>
       </div>
     </td>
