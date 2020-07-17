@@ -3,5 +3,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:about_me, :location , :sex,
+                                                              :discord, :github, :instagram,
+                                                              :crowdin, :steam, :twitter,
+                                                              :occupation, :interests])
   end
 end

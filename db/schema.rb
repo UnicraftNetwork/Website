@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_13_060849) do
+ActiveRecord::Schema.define(version: 2020_06_26_040817) do
 
   create_table "friendly_id_slugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "slug", null: false
@@ -53,22 +53,6 @@ ActiveRecord::Schema.define(version: 2020_07_13_060849) do
     t.integer "wools"
     t.integer "monuments"
     t.integer "cores"
-  end
-
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.text "about_me"
-    t.string "discord", limit: 36
-    t.string "instagram", limit: 36
-    t.string "youtube", limit: 36
-    t.string "reddit", limit: 36
-    t.string "steam", limit: 36
-    t.string "twitter", limit: 36
-    t.string "public_email", limit: 36
-    t.string "github", limit: 36
-    t.string "crowdin", limit: 36
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "staffs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -328,6 +312,17 @@ ActiveRecord::Schema.define(version: 2020_07_13_060849) do
     t.string "unconfirmed_email"
     t.boolean "admin", default: false
     t.boolean "mod", default: false
+    t.text "about_me"
+    t.string "sex"
+    t.string "location"
+    t.string "discord"
+    t.string "github"
+    t.string "instagram"
+    t.string "crowdin"
+    t.string "steam"
+    t.string "twitter"
+    t.string "occupation"
+    t.string "interests"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

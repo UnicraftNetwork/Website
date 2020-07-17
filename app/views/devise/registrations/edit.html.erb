@@ -5,12 +5,11 @@
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <h4>Cambiar correo</h4>
+  <div class="row">
+    <div class="col-md-5 pull-right">
+      <h4>Cambiar correo</h4>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-    <div class="row">
-      <div class="col-md-4">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <div class="form-group">
           <div class="input-group">
             <%= f.email_field :email, autofocus: true, :placeholder => 'Nuevo email', :class => 'form-control devise-form-field' %>
@@ -29,24 +28,18 @@
             <%= f.password_field :current_password, :placeholder => 'Contraseña actual', :class => 'form-control devise-form-field' %>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="btn-toolbar">
-      <div class="actions">
-        <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
-      </div>
-    </div>
-  <% end %>
+        <div class="btn-toolbar">
+          <div class="actions">
+            <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
+          </div>
+        </div>
+      <% end %>
 
-  <br/>
+      <br/>
+      <h4>Cambiar contraseña</h4>
 
-  <h4>Cambiar contraseña</h4>
-
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-    <div class="row">
-      <div class="col-md-4">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <div class="form-group">
           <div class="input-group">
             <% if @minimum_password_length %>
@@ -59,7 +52,7 @@
 
         <div class="form-group">
           <div class="input-group">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => 'Confirmar nueva contraseña', :class => 'form-control devise-form-field' %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => 'Confirmar nueva contraseña', :class => 'form-control devise-form-field' %>
           </div>
         </div>
 
@@ -69,20 +62,122 @@
           </div>
         </div>
 
-      </div>
+        <div class="btn-toolbar">
+          <div class="actions">
+            <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
+          </div>
+        </div>
+        <br/>
+      <% end %>
     </div>
 
-    <div class="btn-toolbar">
-      <div class="actions">
-        <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
-      </div>
+    <div class="col-sm-1">
     </div>
 
-  <% end %>
+    <div class="col pull-left">
+      <h4>Cambiar tus datos</h4>
 
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.text_field :sex, :placeholder => 'Sexo', :autocomplete => 'sex', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.text_field :location, :placeholder => 'Locación', :autocomplete => 'location', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.text_field :occupation, :placeholder => 'Ocupación', :autocomplete => 'occupation', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.text_field :interests, :placeholder => 'Intereses', :autocomplete => 'interests', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.text_field :discord, :placeholder => 'Discord', :autocomplete => 'discord', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text devise-form-input-prepend">instagram.com/</div>
+            </div>
+            <%= f.text_field :instagram, :autocomplete => 'instagram', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text devise-form-input-prepend">twitter.com/</div>
+            </div>
+            <%= f.text_field :twitter, :autocomplete => 'twitter', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text devise-form-input-prepend">github.com/</div>
+            </div>
+            <%= f.text_field :github, :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text devise-form-input-prepend">crowdin.com/profile/</div>
+            </div>
+            <%= f.text_field :crowdin, :autocomplete => 'crowdin', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text devise-form-input-prepend">steamcommunity.com/id/</div>
+            </div>
+            <%= f.text_field :steam, :autocomplete => 'steam', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.text_area :about_me, :placeholder => 'Escribe algo interesante...', :autocomplete => 'about_me', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <%= f.password_field :current_password, :placeholder => 'Contraseña actual', :class => 'form-control devise-form-field' %>
+          </div>
+        </div>
+
+        <div class="btn-toolbar">
+          <div class="actions">
+            <%= f.submit "Actualizar", :class => 'btn btn-primary btn-sm' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%# FIXME: Figure out what to do with accounts's cancellation %>
   <!--
-  <h3>Cancel my account</h3>
-  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+   <h3>Cancel my account</h3>
+   <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   -->
 
   <br/>
