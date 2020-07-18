@@ -11,7 +11,9 @@ module ORG
   NAME_SHORT = 'Unicraft'
   DOMAIN = 'unicraft.cl'
   SHOP = "shop.#{DOMAIN}"
-  EMAIL = "support@#{DOMAIN}"
+  EMAIL = "soporte@#{DOMAIN}"
+  MAILER_EMAIL = "udeccraft@gmail.com"
+  SMTP = "smtp.gmail.com"
 end
 
 module Forums
@@ -23,8 +25,6 @@ module Forums
 
     # Gracefully handle website exceptions such as 404, 422 & 500. All through the ErrorsController
     config.exceptions_app = routes
-
-    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
     config.i18n.default_locale = 'es'
     # Settings in config/environments/* take precedence over those specified here.
