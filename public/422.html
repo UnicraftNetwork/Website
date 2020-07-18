@@ -1,67 +1,166 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="website" property="og:type">
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+  <meta content="Unicraft Network" property="og:title">
+  <meta content="El servidor de Minecraft hogar de Concepción y sus Universidades!" property="og:description">
+  <meta name="author" content="José Benavente">
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  <meta content="https://unicraft.cl>" property="og:url">
+  <meta content="https://avatars1.githubusercontent.com/u/62455935?s=200&amp;v=4" property="og:image">
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+  <meta content="#ffc307" name="theme-color">
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+  <title>Unicraft Network</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-1679a3147ef8431a6256a001502ba207d33af75de7cb715585a5f97743223c6f.png">
+
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="zDxKtKnNKeLl5UShZ1i1FZB+jKyOF14GUeww/7d/7uYwb0OvGdRo7fR8Dhg7YM3cOFkO1AJ2QDTFY+fmTlm8Tw==">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Bootstrap & Popper JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
+  <link rel="stylesheet" media="all" href="/assets/application.debug-39bc12280b160107488f81afa9078e00ed84b263a420346366213a2b9c7972bc.css" data-turbolinks-track="reload">
+  <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark nav-bg">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img alt="logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 5px;" src="/assets/logo-1679a3147ef8431a6256a001502ba207d33af75de7cb715585a5f97743223c6f.png">Unicraft Network
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gavel" aria-hidden="true"></i> Moderación</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/rules"><i class="fa fa-bookmark" aria-hidden="true"></i> Reglas</a>
+            <a class="dropdown-item" href="/staff"><i class="fa fa-user-md" aria-hidden="true"></i> Staff</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cubes" aria-hidden="true"></i> Project Ares</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/pgm"><i class="fa fa-book" aria-hidden="true"></i> Información</a>
+            <a class="dropdown-item" href="/stats"><i class="fa fa-chart-bar" aria-hidden="true"></i> Stats</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/forums"><i class="fa fa-comments" aria-hidden="true"></i> Foros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/gallery"><i class="fa fa-camera" aria-hidden="true"></i> Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/towns"><i class="fa fa-home" aria-hidden="true"></i> Towns</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://udecesports.buycraft.net/" data-target="#" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Tienda</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
+            <i class="fa fa-user"></i>
+            <b class="caret"></b>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="/login">Ingresar</a>
+            <a class="dropdown-item" href="/register">Registrarme</a>
+          </div>
+        </li>
+      </ul>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+</nav>
+<script>
+  $('.dropdown-toggle').dropdown();
+</script>
+
+
+<div class="flash" style="margin-top: 34px;">
+</div>
+
+<style>
+  .jumbotron {
+    background-image: url('http://localhost:3000/assets/404-070d89289b7ac13d3077d111037e6a6d049d21abec8cc64f8719cbe39303d29a.gif');
+  }
+</style>
+
+<div class="container">
+  <div class="jumbotron" style="background-size: 100% 100%; background-repeat: no-repeat">
+    <div style="width: 200px; text-align: center; font-weight: bold; color: white; text-shadow: 2px 2px 5px black;">
+      <div style="font-size: 90px; line-height: 90px;">422</div>
+      <div style="font-size: 30px;">Unprocessable</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="container">
+  <hr>
+</div>
+
+<footer>
+  <div class="references">
+    <div class="above-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Políticas</h5>
+            <div class="list-group">
+              <a href="/privacy" class="list-group-item list-group-item-action">Política de Privacidad</a>
+              <a href="/tos" class="list-group-item list-group-item-action">Términos de Servicio</a>
+              <a href="/rules" class="list-group-item list-group-item-action">Reglas</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Moderación</h5>
+            <div class="list-group">
+              <a href="/staff" class="list-group-item list-group-item-action">Staff</a>
+              <a href="/contact" class="list-group-item list-group-item-action">Contacto</a>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <h5>Involúcrate</h5>
+            <div class="list-group">
+              <a href="https://discord.gg/SAC4NJW" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-discord"></i> Discord</a>
+              <a href="https://github.com/ElMedievo-UdeC" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://www.instagram.com/teamudecesports/" target="_blank" class="list-group-item list-group-item-action"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <hr style="margin-top: 10px;">
+  </div>
+  <strong>© Unicraft Network 2020</strong>
+</footer>
+
 </body>
 </html>
