@@ -2,19 +2,19 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
+  get 'u' => 'errors#not_found'
+
+  resources :users, path: 'u', param: :name
+
   devise_for :users, path: '/',
   path_names: {
       sign_in: 'login',
-      sign_out: 'logout',
       sign_up: 'register'
   },
   controllers: {
       confirmations: 'confirmations',
       registrations: 'registrations'
   }
-
-  resources :users, path: 'u', param: :name
-  get 'u' => 'errors#not_found'
 
   mount Thredded::Engine => Forums::PATH
 
