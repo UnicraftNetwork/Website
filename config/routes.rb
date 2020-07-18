@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
-  get 'u' => 'errors#not_found', :via => 'all'
+  get 'u' => 'errors#not_found'
 
   resources :users, path: 'u', param: :name
 
   devise_for :users, path: '/',
   path_names: {
       sign_in: 'login',
+      sign_out: 'logout',
       sign_up: 'register'
   },
   controllers: {
