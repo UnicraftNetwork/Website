@@ -1,7 +1,7 @@
 Website
 ---
 
-This is the code that powers the website and backend services of UdeC Craft, the Minecraft server home of the UdeC community, in alliance with ElMedievo.
+This is the code that powers the website and backend services of the Unicraft Network, the Minecraft server home of many Chilean universities, in alliance with ElMedievo.
 
 Install the following services and configure them to run on their default ports:
   * [Ruby 2.6.5](https://www.ruby-lang.org/en/).

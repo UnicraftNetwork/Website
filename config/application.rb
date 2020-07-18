@@ -7,8 +7,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module ORG
-  NAME = 'UdeC Craft'
-  DOMAIN = 'udecesports.com'
+  NAME = 'Unicraft Network'
+  NAME_SHORT = 'Unicraft'
+  DOMAIN = 'unicraft.cl'
   SHOP = "shop.#{DOMAIN}"
   EMAIL = "support@#{DOMAIN}"
 end

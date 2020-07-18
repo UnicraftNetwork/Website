@@ -32,6 +32,10 @@ main p {
   color: #e5d6e1;
 }
 
+.front-page-gamemodes {
+  text-align: center;
+}
+
 .display-3 {
   letter-spacing: -3px;
   color: whitesmoke;
@@ -55,10 +59,9 @@ main p {
 }
 
 .site-description img {
-  height: 250px;
-  width: 250px;
+  height: 225px;
+  width: 200px;
   border-radius: 5px;
-  border: 2px solid #e2e2e2;
 }
 
 .ip input {
