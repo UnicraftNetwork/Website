@@ -65,7 +65,7 @@
               %>
               <hr style="margin-top: 5px; margin-bottom: 5px;"/>
               <%= link_to 'Ajustes', edit_user_registration_path, :class => 'dropdown-item' %>
-              <%= link_to "Salir", destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
+              <%= link_to "Salir", destroy_user_session_path, :method => 'delete', :class => 'dropdown-item' %>
             <% else %>
               <%= link_to 'Ingresar', new_user_session_path, :class => 'dropdown-item' %>
               <%= link_to 'Registrarme', new_user_registration_path, :class => 'dropdown-item' %>
