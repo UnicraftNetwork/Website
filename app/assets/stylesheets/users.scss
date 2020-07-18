@@ -1,0 +1,123 @@
+.profile-stuffs {
+  h5 {
+    font-size: 18px;
+    margin-top: 10px !important;
+    margin-bottom: 10px;
+  }
+
+  pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #cccccc;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-radius: 4px;
+    background-color: #212121;
+    border-color: #212121;
+  }
+
+  blockquote {
+    color: #cccccc;
+    margin-left: 15px;
+  }
+}
+
+.profile-space {
+  margin-top: 15px;
+}
+
+.username {
+  font-size: 38.5px;
+}
+
+// Main profile player head
+.big-avatar {
+  width: 130px;
+  height: 130px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: black;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+// Small player heads present throughout the profile
+.avatar {
+  margin-bottom: 3px;
+  margin-right: 3px;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.account-not-linked-card {
+  margin-top: 53px;
+}
+
+.heads {
+  margin-bottom: 15px;
+
+  .heads-footer {
+    font-size: 16px;
+    font-weight: bold;
+    color: #999;
+  }
+
+  .heads-stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #bdbdbd;
+  }
+}
+
+.heads > div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: whitesmoke;
+  background-color: #212121;
+  border-color: #646464;
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  border-color: #646464;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #646464;
+}
+
+.profile-tab-a, .profile-tab-a:hover, .profile-tab-a:focus {
+  color: #bdbdbd;
+}
+
+.stat-label {
+  color: #646464;
+}
+
+// Hidden, for small screens
+@media (min-width: 1180px) and (max-width: 1200px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+.last-seen {
+  margin-bottom: 15px;
+}
+
+
+

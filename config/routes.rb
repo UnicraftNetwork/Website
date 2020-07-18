@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root 'application#index'
+
+  get 'u' => 'errors#not_found', :via => 'all'
+
   resources :users, path: 'u', param: :name
 
   devise_for :users, path: '/',

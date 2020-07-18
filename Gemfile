@@ -16,6 +16,7 @@ gem 'mysql2', '~> 0.5.3'                                        # MySQL, as the 
 gem 'puma', '~> 4.1'                                            # Puma, as the app server
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'                           # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails-i18n', '~> 6.0'                                      # i18n
+gem 'sanitize', '~> 5.2', '>= 5.2.1'                            # HTML & CSS Sanitizer
 gem 'sass-rails', '>= 6'                                        # SCSS, for stylesheets
 gem 'turbolinks', '~> 5'                                        # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'webpacker', '~> 4.0'                                       # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

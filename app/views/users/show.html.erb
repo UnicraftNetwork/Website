@@ -1,29 +1,243 @@
 <div class="container">
-  <% if user_signed_in? and current_user.name.eql?(@user.name) %>
+  <% if user_signed_in? and current_user.name.eql?(@user.name) and current_user.uuid == nil %>
+    <div class="row">
+      <div class="col-md-12">
+        <h5 class="username"><%= current_user.name %></h5>
+      </div>
+    </div>
 
-    <% if current_user.uuid == nil %>
+    <%# FIXME: Some data display is broken for mobile devices. Can reproduce playing with the resolution of the browser window. - Reminder to look into this %>
+    <div class="row">
+      <div class="col-xs-2 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+        <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>">
+      </div>
 
-      <p>You haven't linked your account yet</p>
-      <p>Run <code>/link <%= @user.minecraft_token %></code> in-game to link it!</p>
+      <div class="col-xs-5 col-sm-8 col-md-5 col-lg-5 col-xl-5">
+        <div class="card devise-card">
+          <div class="card-body">
+            <h5 class="card-title"><i style="color: yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Hey, <%= current_user.name %>!</h5>
+            <p class="card-text">¡Aún no has vinculado tu cuenta de <strong>Minecraft</strong> con nuestra página web!</p>
+            <p class="card-text">
+              Para poder hacerlo, ingresa al lobby del servidor de manera regular, y ejecuta el seguiente comando:
+              <br/>
+              <br/>
+              <code>/link <%= current_user.minecraft_token %></code>
+            </p>
+          </div>
+        </div>
+      </div>
 
-    <% else %>
-
-      <p>You have linked your account</p>
-      <p>Content woohoo</p>
-
-    <% end %>
-
+      <div class="col-sm-2">
+      </div>
+    </div>
   <% else %>
 
-    <% if @user.uuid == nil %>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 col-xs-6">
+        <h5 class="username"><%= @user.name %></h5>
+      </div>
+    </div>
 
-      <p>This user hasn't linked their account yet</p>
-
-    <% else %>
-
-      <p>This user has linked their account</p>
-
-    <% end %>
+    <div class="row">
+      <div class="col-md-2 col-sm-3 col-xs-6">
+        <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(@user.uuid) %>">
+      </div>
+      <div class="col-md-6 col-sm-3 col-xs-6">
+        <div class="row heads">
+          <div class="col-md-4">
+            <div class="hidden-sm hidden-xs">
+              <% 16.times do %>
+                  <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="AtlasGames" width="32" height="32">
+              <% end %>
+            </div>
+            <div class="heads-footer">kills</div>
+            <div class="heads-stat-number"><%= @pgm_record.kills %></div>
+          </div>
+          <div class="col-md-4">
+            <div class="hidden-sm hidden-xs">
+              <% 16.times do %>
+                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="AtlasGames" width="32" height="32">
+              <% end %>
+            </div>
+            <div class="heads-footer">deaths</div>
+            <div class="heads-stat-number"><%= @pgm_record.deaths %></div>
+          </div>
+          <div class="col-md-4">
+            <div class="hidden-sm hidden-xs">
+              <% 16.times do %>
+                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="AtlasGames" width="32" height="32">
+              <% end %>
+            </div>
+            <div class="heads-footer">amigos</div>
+            <div class="heads-stat-number">?</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <h2><%= @pgm_record.kd %> <small>kd ratio</small></h2>
+        <h2><%= @pgm_record.kk %> <small>kk ratio</small></h2>
+      </div>
+    </div>
 
   <% end %>
+
+  <br/>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="profile-tab-a nav-link active" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true">General</a>
+    </li>
+    <li class="nav-item">
+      <a class="profile-tab-a nav-link" id="stats-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="stats" aria-selected="false">Stats</a>
+    </li>
+    <li class="nav-item">
+      <a class="profile-tab-a nav-link" id="objectives-tab" data-toggle="tab" href="#objectives" role="tab" aria-controls="objectives" aria-selected="false">Objetivos</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+      <div class="profile-space"></div>
+      <div class="row profile-stuffs">
+        <% if @user.discord? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>Discord</h5>
+            <pre><%= @user.discord %></pre>
+          </div>
+        <% end %>
+
+        <% if @user.public_email? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>Email</h5>
+            <pre><%= @user.public_email %></pre>
+          </div>
+        <% end %>
+
+        <% if @user.twitter? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>Twitter</h5>
+            <blockquote>
+              <p>
+                <a href="https://twitter.com/<%= @user.twitter %>" target="_blank"><%= @user.twitter %></a>
+              </p>
+            </blockquote>
+          </div>
+        <% end %>
+
+        <% if @user.github? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>GtiHub</h5>
+            <blockquote>
+              <p>
+                <a href="https://github.com/<%= @user.github %>" target="_blank"><%= @user.github %></a>
+              </p>
+            </blockquote>
+          </div>
+        <% end %>
+
+        <% if @user.instagram? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>Instagram</h5>
+            <blockquote>
+              <p>
+                <a href="https://instagram.com/<%= @user.instagram %>" target="_blank"><%= @user.instagram %></a>
+              </p>
+            </blockquote>
+          </div>
+        <% end %>
+
+        <% if @user.steam? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>Steam</h5>
+            <blockquote>
+              <p>
+                <a href="https://steamcommunity.com/id/<%= @user.steam %>" target="_blank"><%= @user.steam %></a>
+              </p>
+            </blockquote>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row profile-stuffs">
+        <% if @user.gender? %>
+          <div class="col-sm-6">
+            <h5>Género</h5>
+            <pre><%= @user.gender %></pre>
+          </div>
+        <% end %>
+
+        <% if @user.location? %>
+          <div class="col-sm-6">
+            <h5>Locación</h5>
+            <pre><%= @user.location %></pre>
+          </div>
+        <% end %>
+
+        <% if @user.occupation? %>
+          <div class="col-sm-6">
+            <h5>Ocupación</h5>
+            <pre><%= @user.occupation %></pre>
+          </div>
+        <% end %>
+
+        <% if @user.interests? %>
+          <div class="col-sm-6">
+            <h5>Intereses</h5>
+            <pre><%= @user.interests %></pre>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="row profile-stuffs">
+        <div class="col-md-12">
+          <div class="profile-stuffs">
+            <h5>Acerca de <%= @user.name %></h5>
+            <% if @user.about_me? %>
+              <pre><%= UsersHelper::Profile.render(@user.about_me) %></pre>
+            <% else %>
+              <pre>Aún no hay nada aquí...</pre>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+      <div class="profile-space"></div>
+      <% if user_signed_in? and current_user.name.eql?(@user.name) %>
+        <% if @user.uuid? %>
+          <%= render :partial => 'stats_tab_content' %>
+        <% else %>
+          <p align="center">Aún no has vinculado tu cuenta de Minecraft con la web :(</p>
+        <% end %>
+      <% else %>
+        <% if @user.uuid? %>
+          <%= render :partial => 'stats_tab_content' %>
+        <% else %>
+          <p align="center"><%= @user.name %> aún no ha vinculado su cuenta de Minecraft con la web :(</p>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="tab-pane fade" id="objectives" role="tabpanel" aria-labelledby="objectives-tab">
+      <div class="profile-space"></div>
+      <% if user_signed_in? and current_user.name.eql?(@user.name) %>
+        <% if @user.uuid? %>
+          <%= render :partial => 'objectives_tab_content' %>
+        <% else %>
+          <p align="center">Aún no has vinculado tu cuenta de Minecraft con la web :(</p>
+        <% end %>
+      <% else %>
+        <% if @user.uuid? %>
+          <%= render :partial => 'objectives_tab_content' %>
+        <% else %>
+          <p align="center"><%= @user.name %> aún no ha vinculado su cuenta de Minecraft con la web :(</p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <br/>
+
 </div>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

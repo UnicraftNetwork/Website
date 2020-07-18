@@ -313,7 +313,8 @@ ActiveRecord::Schema.define(version: 2020_06_26_040817) do
     t.boolean "admin", default: false
     t.boolean "mod", default: false
     t.text "about_me"
-    t.string "sex"
+    t.string "gender"
+    t.string "public_email"
     t.string "location"
     t.string "discord"
     t.string "github"

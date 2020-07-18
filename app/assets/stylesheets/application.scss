@@ -11,6 +11,7 @@
 @import "devise";
 @import "kaminari";
 @import "forums";
+@import "users";
 @import "thredded";
 
 body {
@@ -87,3 +88,4 @@ main p {
 .col-md-4 {
   margin-bottom: 15px;
 }
+

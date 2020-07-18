@@ -46,7 +46,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.boolean :mod, default: false
 
       t.text :about_me, null: true
-      t.string :sex, null: true
+      t.string :gender, null: true
+      t.string :public_email, null: true
       t.string :location, null: true
       t.string :discord, null: true
       t.string :github, null: true
