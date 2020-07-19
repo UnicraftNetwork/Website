@@ -151,6 +151,17 @@
           </div>
         <% end %>
 
+        <% if @user.crowdin? %>
+          <div class="col-md-4 col-sm-6">
+            <h5>Crowdin</h5>
+            <blockquote>
+              <p>
+                <a href="https://crowdin.com/profile/<%= @user.github %>" target="_blank"><%= @user.crowdin %></a>
+              </p>
+            </blockquote>
+          </div>
+        <% end %>
+
         <% if @user.instagram? %>
           <div class="col-md-4 col-sm-6">
             <h5>Instagram</h5>
