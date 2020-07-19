@@ -10,5 +10,5 @@
 set :output, "#{path}/log/cron.log"
 
 every 1.minute do
-  rake "#{path}/lib/tasks/delete_unconfirmed_users.rake"
+  rake "#{path}/lib/tasks/delete_unconfirmed_users"
 end
