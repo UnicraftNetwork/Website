@@ -7,6 +7,7 @@
     <div class="row">
       <div class="col-md-5">
         <div class="form-group">
+          <h6>* Tu nombre de usuario es único, y no podrás modificarlo</h6>
           <div class="input-group">
             <%= f.text_field :name, autofocus: true, autocomplete: "name", :placeholder => 'Nombre (3 caracteres mínimo)', :class => 'form-control devise-form-field' %>
           </div>
@@ -35,7 +36,11 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Registrar", :class => 'btn btn-primary' %>
+          <%= f.submit "Registrar", :class => 'btn btn-primary',
+                       data: {
+                           confirm: "¡ATENCIÓN, revisa bien tus datos! \n\nSi te equivocas de email deberás esperar 10 MINUTOS a que tu confirmación expire para poder intentarlo otra vez con tu nombre de usuario."
+                       }
+          %>
         </div>
 
         <br/>
