@@ -31,7 +31,7 @@
     <hr/>
 
     <!-- Reply text box and buttons -->
-    <% unless topic.locked? and (!current_user.admin and !current_user.mod)%>
+    <% unless topic.locked? and (!current_user.admin and !current_user.mod) %>
       <p>
         <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#new-post-collapsible" role="button" aria-expanded="false" aria-controls="new-post-collapsible">
           Postear Respuesta

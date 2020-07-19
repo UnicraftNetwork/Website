@@ -25,7 +25,10 @@
             <% if current_user.mod? or current_user.admin? or current_user == post.user %>
                 <%= render 'thredded/posts_common/actions/edit', post: post %>
                 &nbsp;
-                <%= render 'thredded/posts_common/actions/delete', post: post %>
+                <%# TODO: created_at was used to compare post instances due to the lack of id accessibility. Needs research. %>
+                <% unless  @topic.posts.first.created_at.eql?(post.created_at) and @topic.posts.first.user.name.eql?(post.user.name) %>
+                  <%= render 'thredded/posts_common/actions/delete', post: post %>
+                <% end %>
               </div>
             <% end %>
           <% end %>
