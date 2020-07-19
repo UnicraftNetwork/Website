@@ -2,10 +2,6 @@ Rails.application.routes.draw do
 
   root 'application#index'
 
-  get 'u' => 'errors#not_found'
-
-  resources :users, path: 'u', param: :name
-
   devise_for :users, path: '/',
   path_names: {
       sign_in: 'login',
@@ -15,6 +11,9 @@ Rails.application.routes.draw do
       confirmations: 'confirmations',
       registrations: 'registrations'
   }
+
+  resources :users, path: 'u', param: :name
+  get 'u' => 'errors#not_found'
 
   mount Thredded::Engine => Forums::PATH
 
@@ -41,7 +40,7 @@ Rails.application.routes.draw do
   match '422', to: 'errors#illegal', via: :all
   match '500', to: 'errors#internal_error', via: :all
 
-  # Route for testing error pages
+  # Route for testing error pages in the development environment
   # get 'error' => 'errors#illegal'
 
 end
