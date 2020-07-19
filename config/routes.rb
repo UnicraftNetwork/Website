@@ -12,8 +12,8 @@ Rails.application.routes.draw do
       registrations: 'registrations'
   }
 
-  resources :users, path: 'u', param: :name
   get 'u' => 'errors#not_found'
+  resources :users, path: 'u', param: :name
 
   mount Thredded::Engine => Forums::PATH
 
