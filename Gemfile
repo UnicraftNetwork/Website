@@ -20,6 +20,7 @@ gem 'sanitize', '~> 5.2', '>= 5.2.1'                            # HTML & CSS San
 gem 'sass-rails', '>= 6'                                        # SCSS, for stylesheets
 gem 'turbolinks', '~> 5'                                        # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'webpacker', '~> 4.0'                                       # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'whenever', '~> 1.0'                                        # Handle cron tasks more effectively
 
 gem 'thredded', '~> 0.16.16'
 
