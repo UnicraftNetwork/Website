@@ -2,12 +2,15 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark topic-toolbar">
     <%= view_hooks.topic_page.title.render self, topic: topic do %>
-      <% if topic.locked? %>
-        <h3><%= link_to topic.title, topic.path %><small>, por <%= user_link(topic.user) %> <i data-toggle="tooltip" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
-        </small></h3>
-      <% else %>
-        <h3><%= link_to topic.title, topic.path %><small>, por <%= user_link(topic.user) %></small></h3>
-      <% end %>
+      <h3><%= link_to topic.title, topic.path %><small>, por <%= user_link(topic.user) %>
+          <% if topic.locked? %>
+            <i data-toggle="tooltip" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
+          <% end %>
+          <% if topic.sticky? %>
+            <i data-toggle="tooltip" title="<%= t('thredded.topics.sticky.label') %>" class="fa fa-thumb-tack" aria-hidden="true"></i>
+          <% end %>
+        </small>
+      </h3>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#forum-topic-toolbar" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
