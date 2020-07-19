@@ -4,13 +4,13 @@
     <div class="row">
       <div class="col-sm-6">
         <h3>
-          <%= @pgm_record.wools %>
+          <%= resolve_stat(@pgm_record, 'wools') %>
           <small>Wools</small>
         </h3>
       </div>
       <div class="col-sm-6">
         <h3>
-          <%= @pgm_record.monuments %>
+          <%= resolve_stat(@pgm_record, 'monuments') %>
           <small>Monuments</small>
         </h3>
       </div>
@@ -20,7 +20,7 @@
     <div class="row">
       <div class="col-sm-6">
         <h3>
-          <%= @pgm_record.cores %>
+          <%= resolve_stat(@pgm_record, 'cores') %>
           <small>Cores</small>
         </h3>
       </div>
