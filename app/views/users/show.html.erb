@@ -52,10 +52,14 @@
     </div>
 
     <div class="row">
+
       <div class="col-md-2 col-sm-3 col-xs-6">
         <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(@user.uuid) %>">
-        <h4><small><%= @user.name %> aún no vincula su cuenta de Minecraft</small></h4>
+        <% if @user.uuid.nil? %>
+         <h4><small><%= @user.name %> aún no vincula su cuenta de Minecraft</small></h4>
+        <% end %>
       </div>
+
       <div class="col-md-6 col-sm-3 col-xs-6">
         <div class="row heads">
           <div class="col-md-4">
