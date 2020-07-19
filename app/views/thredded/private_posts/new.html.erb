@@ -4,8 +4,6 @@
 <% content_for :thredded_breadcrumbs, render('thredded/private_topics/breadcrumbs') %>
 
 <%= thredded_page do %>
-  <section class="thredded--main-section">
-    <%= render 'thredded/private_posts/form',
-               post: @post_form %>
-  </section>
+  <%= render 'thredded/private_posts/form',
+             post: @post_form %>
 <% end %>
