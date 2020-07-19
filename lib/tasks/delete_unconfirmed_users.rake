@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-namespace :unc do
+namespace :ucn do
   desc 'Scheduled tasks for users'
   task users: :environment do
     while true
