@@ -68,3 +68,7 @@ Run the following shell commands from the Website repo to start all the backend 
     export SECRET_KEY_BASE=output-of-rake-secret
     rake assets:precompile RAILS_ENV=production
     rails server -b 0.0.0.0 -p 80 -e production
+    
+In case you would like to destroy users who have failed their email verification by exceeding devise's tolerance threshold, you will need to let the following users rake task running:
+
+    rake ucn:users
