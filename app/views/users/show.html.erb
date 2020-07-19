@@ -41,6 +41,7 @@
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-6">
         <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(@user.uuid) %>">
+        <h4><small><%= @user.name %> aún no vincula su cuenta de Minecraft</small></h4>
       </div>
       <div class="col-md-6 col-sm-3 col-xs-6">
         <div class="row heads">
@@ -51,7 +52,7 @@
               <% end %>
             </div>
             <div class="heads-footer">kills</div>
-            <div class="heads-stat-number"><%= @pgm_record.kills %></div>
+            <div class="heads-stat-number"><%= resolve_stat(@pgm_record, 'kills') %></div>
           </div>
           <div class="col-md-4">
             <div class="hidden-sm hidden-xs">
@@ -60,7 +61,7 @@
               <% end %>
             </div>
             <div class="heads-footer">deaths</div>
-            <div class="heads-stat-number"><%= @pgm_record.deaths %></div>
+            <div class="heads-stat-number"><%= resolve_stat(@pgm_record, 'deaths') %></div>
           </div>
           <div class="col-md-4">
             <div class="hidden-sm hidden-xs">
@@ -74,8 +75,8 @@
         </div>
       </div>
       <div class="col-md-4 col-sm-6 col-xs-12">
-        <h2><%= @pgm_record.kd %> <small>kd ratio</small></h2>
-        <h2><%= @pgm_record.kk %> <small>kk ratio</small></h2>
+        <h2><%= resolve_stat(@pgm_record, 'kd') %> <small>kd ratio</small></h2>
+        <h2><%= resolve_stat(@pgm_record, 'kk') %> <small>kk ratio</small></h2>
       </div>
     </div>
 
