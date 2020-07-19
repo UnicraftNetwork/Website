@@ -5,12 +5,15 @@
   <table class="table table-bordered table-striped">
     <thead>
     <tr>
-      <th width="3%">#</th>
-      <th>Kills</th>
-      <th>Deaths</th>
-      <th>KD Ratio</th>
-      <th>KK Ratio</th>
-      <th width="50%">Usuario</th>
+      <th width="5%">#</th>
+      <th width="13%">Kills</th>
+      <th width="13%">Deaths</th>
+      <th width="10%">KD Ratio</th>
+      <th width="10%">KK Ratio</th>
+      <th width="7%">Wools</th>
+      <th width="7%">Monuments</th>
+      <th width="7%">Cores</th>
+      <th width="30%">Usuario</th>
     </tr>
     </thead>
     <tbody>
@@ -33,6 +36,10 @@
           <% else %>
             <td><%= number_with_precision(record.kk, :precision => 3) %></td>
           <% end %>
+
+          <td><%= record.wools %></td>
+          <td><%= record.monuments %></td>
+          <td><%= record.cores %></td>
 
           <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt=""> <%= record.nick %></td>
 
