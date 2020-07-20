@@ -1,6 +1,6 @@
 <% if Thredded.private_messaging_enabled %>
-  <%= link_to "Mensajes #{unread_private_topics_count > 0 ? '(' + unread_private_topics_count + ')' : ''}",
-              Forums::PATH + private_topics_path,
+  <%= link_to "Mensajes #{unread_private_topics_count > 0 ? "(#{unread_private_topics_count})" : ''}",
+              "#{Forums::PATH}/#{private_topics_path}",
               rel: 'nofollow',
               :class => 'dropdown-item'
   %>
