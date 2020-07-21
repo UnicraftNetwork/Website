@@ -31,12 +31,14 @@
     <hr/>
 
     <!-- Reply text box and buttons -->
-    <% unless user_signed_in? and topic.locked? and (!current_user.admin and !current_user.mod) %>
-      <p>
-        <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#new-post-collapsible" role="button" aria-expanded="false" aria-controls="new-post-collapsible">
-          Postear Respuesta
-        </a>
-      </p>
+    <% if user_signed_in? %>
+      <% unless topic.locked? and (!current_user.admin and !current_user.mod) %>
+        <p>
+          <a class="btn btn-sm btn-primary" data-toggle="collapse" href="#new-post-collapsible" role="button" aria-expanded="false" aria-controls="new-post-collapsible">
+            Postear Respuesta
+          </a>
+        </p>
+      <% end %>
     <% end %>
 
     <div class="collapse" id="new-post-collapsible">
