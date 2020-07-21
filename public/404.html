@@ -1,23 +1,25 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="website" property="og:type">
+  <meta content='website' property='og:type'>
 
-  <meta content="Unicraft Network" property="og:title">
+  <meta content='Unicraft Network' property='og:title'>
   <meta content="El servidor de Minecraft hogar de Concepción y sus Universidades!" property="og:description">
   <meta name="author" content="José Benavente">
 
-  <meta content="https://unicraft.cl>" property="og:url">
-  <meta content="https://avatars1.githubusercontent.com/u/62455935?s=200&amp;v=4" property="og:image">
+  <meta content='https://unicraft.cl' property='og:url'>
+  <meta content='https://i.imgur.com/WpNCcjb.png' property='og:image'>
 
-  <meta content="#ffc307" name="theme-color">
+  <meta content='#4B0082' name='theme-color'>
 
   <title>Unicraft Network</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-1679a3147ef8431a6256a001502ba207d33af75de7cb715585a5f97743223c6f.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-1679a3147ef8431a6256a001502ba207d33af75de7cb715585a5f97743223c6f.png" />
 
-  <meta name="csrf-param" content="authenticity_token">
-  <meta name="csrf-token" content="zDxKtKnNKeLl5UShZ1i1FZB+jKyOF14GUeww/7d/7uYwb0OvGdRo7fR8Dhg7YM3cOFkO1AJ2QDTFY+fmTlm8Tw==">
+  <meta name="csrf-param" content="authenticity_token" />
+  <meta name="csrf-token" content="wklEJMzzHcX17vG8dm3U8/Li9g/eC4nJ6koPebCHFPOlzI7/e5OhR/LCYH/ZNC65ijlM7wGU+6gCSpjzFjQBWw==" />
 
 
   <!-- Bootstrap CSS -->
@@ -30,8 +32,8 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
 
-  <link rel="stylesheet" media="all" href="/assets/application.debug-39bc12280b160107488f81afa9078e00ed84b263a420346366213a2b9c7972bc.css" data-turbolinks-track="reload">
-  <script src="/packs/js/application-9afcbb5693aa87623e69.js" data-turbolinks-track="reload"></script>
+  <link rel="stylesheet" media="all" href="/assets/application-dbeccd15557a8d4ca120adff4594a1f97979e1dd6e9ad243a6e8409f1b680e82.css" data-turbolinks-track="reload" />
+  <script src="/packs/js/application-dd6e88065a32b23f8e21.js" data-turbolinks-track="reload"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -40,7 +42,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <img alt="logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 5px;" src="/assets/logo-1679a3147ef8431a6256a001502ba207d33af75de7cb715585a5f97743223c6f.png">Unicraft Network
+      <img alt="logo" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 5px;" src="/assets/logo-1679a3147ef8431a6256a001502ba207d33af75de7cb715585a5f97743223c6f.png" />Unicraft Network
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -78,19 +80,32 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
           <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#">
-            <i class="fa fa-user"></i>
+            <img class="profile-head-mini" src="https://api.ashcon.app/mojang/v2/avatar/2cef6d05-ec9a-44b3-bedc-53359c68ae65">
             <b class="caret"></b>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="/login">Ingresar</a>
-            <a class="dropdown-item" href="/register">Registrarme</a>
+            <a class="dropdown-item" href="/u/BGMP">Perfil</a>
+
+            <a rel="nofollow" class="dropdown-item" href="/forums//private-topics">Mensajes (2)</a>
+
+            <a rel="nofollow" class="dropdown-item" href="/forums/preferences/edit">Notificaciones</a>
+
+            <hr style="margin-top: 5px; margin-bottom: 5px;"/>
+            <a rel="nofollow" class="dropdown-item" href="/forums/admin/moderation">Moderar </a>
+
+            <a rel="nofollow" class="dropdown-item" href="/forums/admin/messageboard_groups/new">Crear una Nueva Sección</a>
+            <a rel="nofollow" class="dropdown-item" href="/forums/messageboards/new">Crear un nuevo foro</a>
+
+            <hr style="margin-top: 5px; margin-bottom: 5px;"/>
+            <a class="dropdown-item" href="/edit">Ajustes</a>
+            <a class="dropdown-item" rel="nofollow" data-method="delete" href="/sign_out">Salir</a>
           </div>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<script>
+<script type="text/javascript">
   $('.dropdown-toggle').dropdown();
 </script>
 
@@ -100,7 +115,7 @@
 
 <style>
   .jumbotron {
-    background-image: url('http://localhost:3000/assets/404-070d89289b7ac13d3077d111037e6a6d049d21abec8cc64f8719cbe39303d29a.gif');
+    background-image: url('https://unicraft.cl/assets/404-070d89289b7ac13d3077d111037e6a6d049d21abec8cc64f8719cbe39303d29a.gif');
   }
 </style>
 
@@ -115,10 +130,10 @@
 </div>
 
 
-
+</body>
 
 <div class="container">
-  <hr>
+  <hr/>
 </div>
 
 <footer>
@@ -155,12 +170,11 @@
       </div>
     </div>
   </div>
-  <br>
+  <br/>
   <div class="container">
-    <hr style="margin-top: 10px;">
+    <hr style="margin-top: 10px;"/>
   </div>
-  <strong>© Unicraft Network 2020</strong>
+  <strong>&copy; Unicraft Network 2020</strong>
 </footer>
 
-</body>
 </html>
