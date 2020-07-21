@@ -1,6 +1,20 @@
+.profile-page {
+  @media (min-width: 1180px) and (max-width: 1200px) {
+    .hidden-sm {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .hidden-xs {
+      display: none !important;
+    }
+  }
+}
+
 .profile-stuffs {
   h5 {
-    font-size: 18px;
+    font-size: 17px;
     margin-top: 10px !important;
     margin-bottom: 10px;
   }
@@ -100,4 +114,28 @@
 
 .stat-label {
   color: #646464;
+}
+
+// Staff group badges
+.label, .badge {
+  text-shadow: none;
+}
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+
+a.label:focus, a.label:hover {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }

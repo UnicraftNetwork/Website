@@ -1,17 +1,4 @@
-<style>
-  @media (min-width: 1180px) and (max-width: 1200px) {
-    .hidden-sm {
-      display: none !important;
-    }
-  }
-
-  @media (max-width: 1180px) {
-    .hidden-xs {
-      display: none !important;
-    }
-  }
-</style>
-<div class="container">
+<div class="container profile-page">
   <% if user_signed_in? and current_user.name.eql?(@user.name) and current_user.uuid == nil %>
     <div class="row">
       <div class="col-md-12">
@@ -46,13 +33,15 @@
   <% else %>
 
     <div class="row">
-      <div class="col-md-2 col-sm-3 col-xs-6">
-        <h5 class="username"><%= @user.name %></h5>
+      <div class="col-md-12">
+        <h5 class="username" style="color: <%= @groups.empty? ? '' : @groups.first.colour_hex %>"><%= @user.name %></h5>
+        <% @groups.each do |group| %>
+          <a href="<%= staff_path %>" class="label" style="background-color: <%= group.colour_hex %>; color: white;"><%= group.name %></a>
+        <% end %>
       </div>
     </div>
 
-    <div class="row">
-
+    <div style="margin-top: 20px;" class="row">
       <div class="col-md-2 col-sm-3 col-xs-6">
         <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(@user.uuid) %>">
         <% if @user.uuid.nil? %>

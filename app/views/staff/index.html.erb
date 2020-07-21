@@ -13,7 +13,7 @@
 
   </section>
 
-  <% @groups.each do |group| %>
+  <% @groups.sort_by(&:priority).each do |group| %>
     <% next if group.staffs.count.eql?(0) %>
     <div class="row">
       <div class="col-md-12">
