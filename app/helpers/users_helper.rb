@@ -7,19 +7,19 @@ module UsersHelper
 
     case stat
     when 'kills'
-      pgm_record&.kills
+      pgm_record.kills
     when 'deaths'
-      pgm_record&.deaths
+      pgm_record.deaths
     when 'kd'
-      pgm_record&.kd
+      pgm_record.kd
     when 'kk'
-      pgm_record&.kk
+      pgm_record.kk
     when 'wools'
-      pgm_record&.wools
+      pgm_record.wools
     when 'monuments'
-      pgm_record&.monuments
+      pgm_record.monuments
     when 'cores'
-      pgm_record&.cores
+      pgm_record.cores
     else
       '?'
     end
