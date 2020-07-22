@@ -14,6 +14,8 @@
   </section>
 
   <div class="container">
+    <%= paginate @towns %>
+
     <div class="row">
       <% @towns.each do |town| %>
         <div class="col-md-4">
@@ -62,6 +64,8 @@
         </div>
       <% end %>
     </div>
+
+    <%= paginate @towns %>
   </div>
 
 </div>
