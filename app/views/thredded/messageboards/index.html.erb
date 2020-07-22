@@ -44,7 +44,7 @@
                     <%= link_to topic.user.name, user_path(topic.user), :class => 'poster-preview' %> ➔&nbsp;
                   </div>
                   <div class="col-xs-6">
-                    <%= time_ago(topic.created_at) %> en <%= link_to topic.messageboard.name,  "#{Forums::PATH}/#{topic.messageboard.slug}" %>
+                    <%= time_ago(topic.created_at) %> en <%= link_to topic.messageboard.name, "#{Forums::PATH}/#{topic.messageboard.slug}" %>
                   </div>
                 </div>
               </div>
