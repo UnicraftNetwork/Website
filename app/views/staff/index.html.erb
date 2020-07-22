@@ -32,11 +32,7 @@
             <img class="staff-head" src="<%= Minecraft::Data.head_url_of_uuid(staff.uuid) %>"  alt=""/>
           </a>
           <div class="staff-username">
-            <% if staff.uuid? %>
-              <strong style="color: <%= group.colour_hex %>;"><%= Minecraft::Data.uuid_to_username(staff.uuid) %></strong>
-            <% else %>
-              <strong style="color: <%= group.colour_hex %>;"><%= staff.nick %></strong>
-            <% end %>
+            <strong style="color: <%= group.colour_hex %>;"><%= resolve_nick_for(staff) %></strong>
           </div>
           <div class="staff-role">
             <%= staff.role %>
