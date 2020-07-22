@@ -23,7 +23,7 @@ class GalleryController < ApplicationController
                'https://i.imgur.com/AXdhP36.png',
                'https://i.imgur.com/dquOIC9.png',
                'https://i.imgur.com/iWBWoyy.png',
-               'https://i.imgur.com/60NQifB.png
+               'https://i.imgur.com/60NQifB.png'
     ]
   end
 end
