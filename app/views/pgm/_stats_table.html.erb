@@ -19,30 +19,16 @@
     <tbody>
       <% @pgm_records.each do |record| %>
         <% @count += 1 %>
-
         <tr>
           <td><%= @count - 1 %></td>
           <td><%= record.kills %></td>
           <td><%= record.deaths %></td>
-
-          <% if record.deaths == 0 %>
-            <td><%= record.kills %>.000</td>
-          <% else %>
-            <td><%= number_with_precision(record.kd, :precision => 3) %></td>
-          <% end %>
-
-          <% if record.killed == 0 %>
-            <td><%= record.kills %>.000</td>
-          <% else %>
-            <td><%= number_with_precision(record.kk, :precision => 3) %></td>
-          <% end %>
-
+          <td><%= number_with_precision(record.kd, :precision => 3) %></td>
+          <td><%= number_with_precision(record.kk, :precision => 3) %></td>
           <td><%= record.wools %></td>
           <td><%= record.monuments %></td>
           <td><%= record.cores %></td>
-
           <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt=""> <%= record.nick %></td>
-
         </tr>
       <% end %>
     </tbody>
