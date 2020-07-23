@@ -10,9 +10,12 @@
         </div>
       </div>
       <div class="col-xs-6">
-        <h5 class="post-comment">
-          <%= user_link post.user %>
-        </h5>
+        <div class="span9">
+          <rem class="post-comment"><%= user_link post.user %></rem>
+          <%= ApplicationController.renderer.new(request.env.slice('warden'))
+              .render(partial: "staff/badges", locals: { user: post.user })
+          %>
+        </div>
       </div>
 
       <div class="col">
@@ -25,7 +28,7 @@
             <% if current_user.mod? or current_user.admin? or current_user == post.user %>
                 <%= render 'thredded/posts_common/actions/edit', post: post %>
                 <% unless post.first_in_page? %>
-                  <%= render 'thredded/posts_common/actions/delete', post: post %>
+                  &nbsp;<%= render 'thredded/posts_common/actions/delete', post: post %>
                 <% end %>
               </div>
             <% end %>

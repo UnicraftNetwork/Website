@@ -1,0 +1,3 @@
+<% user_groups(user).each do |group| %>
+  <a href="<%= staff_path %>" class="label" style="background-color: <%= group.colour_hex %>; color: white;"><%= group.name %></a>
+<% end %>

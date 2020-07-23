@@ -14,10 +14,10 @@
           <div class="col-xs-6">
             <%= link_to topic.title, topic.path %>
             <% if topic.locked? %>
-              <i data-toggle="tooltip" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
+              <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
             <% end %>
             <% if topic.sticky? %>
-              <i data-toggle="tooltip" title="<%= t('thredded.topics.sticky.label') %>" class="fa fa-thumb-tack" aria-hidden="true"></i>
+              <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.sticky.label') %>" class="fa fa-thumb-tack" aria-hidden="true"></i>
             <% end %>
           </div>
         </div>
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="col-xs-6">
-            <%= link_to topic.user.name, user_path(topic.user), :class => 'poster-preview' %> ➔&nbsp;
+            <rem class="poster-preview"><%= user_link topic.user %></rem> ➔&nbsp;
           </div>
           <div class="col-xs-6">
             <%= time_ago(topic.created_at) %>
@@ -45,7 +45,7 @@
             </div>
           </div>
           <div class="col-xs-6">
-            <%= link_to topic.last_user.name, user_path(topic.last_user), :class => 'poster-preview' %>
+            <rem class="poster-preview"><%= user_link topic.last_user %></rem>
           </div>
           &nbsp;<%= time_ago topic.last_post_at %>
         </div>

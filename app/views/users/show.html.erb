@@ -34,10 +34,8 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h5 class="username" style="color: <%= @groups.empty? ? '' : @groups.first.colour_hex %>"><%= @user.name %></h5>
-        <% @groups.each do |group| %>
-          <a href="<%= staff_path %>" class="label" style="background-color: <%= group.colour_hex %>; color: white;"><%= group.name %></a>
-        <% end %>
+        <h5 class="username" style="color: <%= username_color(@user) %>"><%= @user.name %></h5>
+        <%= render :partial => 'staff/badges', locals: { user: @user } %>
       </div>
     </div>
 

@@ -41,8 +41,7 @@
           <td><%= record.monuments %></td>
           <td><%= record.cores %></td>
 
-          <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt=""> <%= record.nick %></td>
-
+          <td style="color: <%= username_color_of_uuid(record.uuid) %>"><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt=""> <%= record.nick %></td>
         </tr>
       <% end %>
     </tbody>
