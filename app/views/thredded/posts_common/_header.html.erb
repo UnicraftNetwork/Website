@@ -24,8 +24,6 @@
               %>
             <% if current_user.mod? or current_user.admin? or current_user == post.user %>
                 <%= render 'thredded/posts_common/actions/edit', post: post %>
-                &nbsp;
-                <%# TODO: created_at was used to compare post instances due to the lack of id accessibility. Needs research. %>
                 <% unless post.first_in_page? %>
                   <%= render 'thredded/posts_common/actions/delete', post: post %>
                 <% end %>
