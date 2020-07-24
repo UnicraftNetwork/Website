@@ -46,39 +46,43 @@
         <% end %>
       </div>
       <div class="col-xl-6 col-lg-7 col-md-4">
-        <div class="row heads">
-          <div class="col-md-4">
-            <div class="hidden-sm hidden-xs">
-              <% 16.times do %>
+        <div class="container">
+          <div class="row heads">
+            <div class="col-md-4">
+              <div class="hidden-sm hidden-xs">
+                <% 16.times do %>
+                    <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
+                <% end %>
+              </div>
+              <div class="heads-footer">kills</div>
+              <div class="heads-stat-number"><%= resolve_stat(@pgm_record, 'kills') %></div>
+            </div>
+            <div class="col-md-4">
+              <div class="hidden-sm hidden-xs">
+                <% 16.times do %>
                   <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
-              <% end %>
+                <% end %>
+              </div>
+              <div class="heads-footer">deaths</div>
+              <div class="heads-stat-number"><%= resolve_stat(@pgm_record, 'deaths') %></div>
             </div>
-            <div class="heads-footer">kills</div>
-            <div class="heads-stat-number"><%= resolve_stat(@pgm_record, 'kills') %></div>
-          </div>
-          <div class="col-md-4">
-            <div class="hidden-sm hidden-xs">
-              <% 16.times do %>
-                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
-              <% end %>
+            <div class="col-md-4">
+              <div class="hidden-sm hidden-xs">
+                <% 16.times do %>
+                  <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
+                <% end %>
+              </div>
+              <div class="heads-footer">amigos</div>
+              <div class="heads-stat-number">?</div>
             </div>
-            <div class="heads-footer">deaths</div>
-            <div class="heads-stat-number"><%= resolve_stat(@pgm_record, 'deaths') %></div>
-          </div>
-          <div class="col-md-4">
-            <div class="hidden-sm hidden-xs">
-              <% 16.times do %>
-                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
-              <% end %>
-            </div>
-            <div class="heads-footer">amigos</div>
-            <div class="heads-stat-number">?</div>
           </div>
         </div>
       </div>
       <div class="col-xl-4 col-lg-3 col-md-4">
-        <h2><%= resolve_stat(@pgm_record, 'kd') %> <small>kd ratio</small></h2>
-        <h2><%= resolve_stat(@pgm_record, 'kk') %> <small>kk ratio</small></h2>
+        <div class="container">
+          <h2><%= resolve_stat(@pgm_record, 'kd') %> <small>kd ratio</small></h2>
+          <h2><%= resolve_stat(@pgm_record, 'kk') %> <small>kk ratio</small></h2>
+        </div>
       </div>
     </div>
 
