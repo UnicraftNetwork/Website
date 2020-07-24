@@ -6,7 +6,6 @@
       </div>
     </div>
 
-    <%# FIXME: Some data display is broken for mobile devices. Can reproduce playing with the resolution of the browser window. - Reminder to look into this %>
     <div class="row">
       <div class="col-xs-2 col-sm-4 col-md-3 col-lg-2 col-xl-2">
         <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(current_user.uuid) %>">
@@ -40,19 +39,18 @@
     </div>
 
     <div style="margin-top: 20px;" class="row">
-      <div class="col-md-2 col-sm-3 col-xs-6">
+      <div class="col-xl-2 col-lg-2 col-md-3">
         <img class="big-avatar" src="<%= Minecraft::Data.head_url_of_uuid(@user.uuid) %>">
         <% if @user.uuid.nil? %>
          <h4><small><%= @user.name %> aún no vincula su cuenta de Minecraft</small></h4>
         <% end %>
       </div>
-
-      <div class="col-md-6 col-sm-3 col-xs-6">
+      <div class="col-xl-6 col-lg-7 col-md-4">
         <div class="row heads">
           <div class="col-md-4">
             <div class="hidden-sm hidden-xs">
               <% 16.times do %>
-                  <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="AtlasGames" width="32" height="32">
+                  <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
               <% end %>
             </div>
             <div class="heads-footer">kills</div>
@@ -61,7 +59,7 @@
           <div class="col-md-4">
             <div class="hidden-sm hidden-xs">
               <% 16.times do %>
-                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="AtlasGames" width="32" height="32">
+                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
               <% end %>
             </div>
             <div class="heads-footer">deaths</div>
@@ -70,7 +68,7 @@
           <div class="col-md-4">
             <div class="hidden-sm hidden-xs">
               <% 16.times do %>
-                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="AtlasGames" width="32" height="32">
+                <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
               <% end %>
             </div>
             <div class="heads-footer">amigos</div>
@@ -78,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="col-xl-4 col-lg-3 col-md-4">
         <h2><%= resolve_stat(@pgm_record, 'kd') %> <small>kd ratio</small></h2>
         <h2><%= resolve_stat(@pgm_record, 'kk') %> <small>kk ratio</small></h2>
       </div>

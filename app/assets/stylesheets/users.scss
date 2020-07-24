@@ -1,11 +1,11 @@
 .profile-page {
-  @media (min-width: 1180px) and (max-width: 1200px) {
+  @media (min-width: 900px) and (max-width: 1000px) {
     .hidden-sm {
       display: none !important;
     }
   }
 
-  @media (max-width: 1180px) {
+  @media (max-width: 1000px) {
     .hidden-xs {
       display: none !important;
     }
