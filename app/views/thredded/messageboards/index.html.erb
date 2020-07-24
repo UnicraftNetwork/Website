@@ -27,7 +27,7 @@
                   <div class="col-xs-6">
                     <%= link_to topic.title, "#{Forums::PATH}/#{topic.messageboard.slug}/#{topic.slug}" %>
                     <% if topic.locked? %>
-                      <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
+                      <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.locked.label') %>" class="fa fa-lock" aria-hidden="true"></i>
                     <% end %>
                     <% if topic.sticky? %>
                       <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.sticky.label') %>" class="fa fa-thumb-tack" aria-hidden="true"></i>
