@@ -22,7 +22,7 @@ es:
         pdf:
           attributes:
             name:
-              blank: "Debes ingresar un nombre para PDF"
+              blank: "Debes ingresar un nombre para el PDF"
               taken: "Ese nombre de PDF ya está tomado"
             attachment:
               blank: "Por favor, sube un archivo PDF"
@@ -48,17 +48,17 @@ es:
       message_notification:
         html:
           email_sent_reason_html: >-
-            Este correo electrónico se te envió porque %{user} te incluyó en un tema privado, "<a href="%{post_url}">%{topic_title}</a>".
+            Este correo electrónico se te envió porque %{user} te envió un mensaje privado, "<a href="%{post_url}">%{topic_title}</a>".
           post_lead_html: 'Un nuevo mensaje de %{user} en <a href="%{post_url}">"%{topic_title}"</a>:'
           unsubscribe_instructions_html: :thredded.emails.post_notification.html.unsubscribe_instructions_html
         subject: Un nuevo mensaje de %{user} en "%{topic_title}"
         text:
           email_sent_reason: |-
-            Este correo electrónico se te envió porque %{user} te incluyó en
-            el tema privado "%{topic_title}".
-            Ve aquí para ver la conversación:
+            Este correo electrónico se te envió porque %{user} te añadió
+            a la conversación "%{topic_title}".
+            Ve aquí para verla en la web:
             %{post_url}
-          post_lead: 'Un nuevo mensaje de %{user} en "%{topic_title}":'
+          post_lead: 'Nuevo mensaje de %{user} en "%{topic_title}":'
           unsubscribe_instructions: :thredded.emails.post_notification.text.unsubscribe_instructions
       post_notification:
         html:
@@ -92,7 +92,7 @@ es:
       update: Actualizar
       update_btn_submitting: Actualizando...
     messageboard:
-      create: Crear un nuevo foro
+      create: Crear un nuevo subforo
       deleted_notice: Tablero de mensajes eliminado
       form:
         create_btn_submitting: :thredded.form.create_btn_submitting
@@ -108,24 +108,26 @@ es:
         title_label: Nombre
         update_btn_submitting: :thredded.form.update_btn_submitting
       index:
-        page_title: Foros
+        page_title: Subforos
       last_updated_by_html: Actualizado %{time_ago} <cite>por %{user}</cite>
       topics_and_posts_counts: "%{topics_count} temas / %{posts_count} mensajes"
       topics_and_unread_topics_counts: "%{unread_topics_count} no leídos de los temas de %{topics_count}"
       update: :thredded.form.update
-      updated_notice: Foro actualizado
+      updated_notice: Subforo actualizado
     messageboard_first_topic:
       content: |-
-        There's not a whole lot here for now.
-        These forums are powered by [Thredded](https://github.com/thredded/thredded) v%{thredded_version}.
-        You can contact the Thredded team via the [Thredded chat room](https://gitter.im/thredded/thredded).
-        Please let us know that you are using Thredded by tweeting [@thredded](https://twitter.com/thredded)!
+        ¡Este es el primer tema de este gran subforo!
+
+        Foros impulsados por [Thredded](https://github.com/thredded/thredded) v%{thredded_version}, un
+        gran motor de comunidades de foros open source para Rails 4.2+!
+
+        - BGMP
       title: Welcome to your messageboard's very first thread
     messageboard_group:
-      create: Crear una Nueva Sección
+      create: Nueva Categoría
       form:
         create_btn_submitting: :thredded.form.create_btn_submitting
-      saved: Sección %{name} creada
+      saved: Categoría %{name} creada
       show:
         page_title: 'Grupo de tablero de mensajes: %{name}'
     moderation:
@@ -151,8 +153,8 @@ es:
       user:
         name: Usuario
     nav:
-      all_messageboards: Todos los Foros
-      edit_messageboard: Editar Foro
+      all_messageboards: Todos los Subforos
+      edit_messageboard: Editar Subforo
       edit_post: "" # Editar Mensaje
       edit_private_topic: :thredded.nav.edit_topic
       edit_topic: Editar
@@ -199,7 +201,7 @@ es:
             respectiva anteriormente.
           label: Siga todos los temas nuevos
         messageboard_follow_topics_on_mention:
-          hint: 'Cuando alguien te menciona usando tu nombre de usuario (por ejemplo: @sam) en este foro, seguirás
+          hint: 'Cuando alguien te menciona usando tu nombre de usuario (por ejemplo: @sam) en este subforo, seguirás
               el tema.'
           label: :thredded.preferences.form.follow_topics_on_mention.label
         messageboard_notifications_for_followed_topics:
@@ -211,7 +213,7 @@ es:
         submit_btn: Actualizar Ajustes
         update_btn_submitting: :thredded.form.update_btn_submitting
       global_preferences_title: Ajustes Generales
-      messageboard_preferences_nav_title: Ajustes por foro
+      messageboard_preferences_nav_title: Ajustes por subforo
       messageboard_preferences_title_html: Ajustes de Notificaciones para <em>%{messageboard}</em>
       updated_notice: Tus ajustes han sido actualizados.
     private_posts:
@@ -266,7 +268,7 @@ es:
         categories_placeholder: Categorías
         content_label: :thredded.posts.form.content_label
         create_btn: Crear Nuevo Tema
-        messageboard_label: Foro
+        messageboard_label: Subforo
         title_label: Título
         title_placeholder: :thredded.topics.form.title_label
         title_placeholder_start: Crear un Nuevo Tema
@@ -298,7 +300,7 @@ es:
       page_title_in_messageboard: "%{messageboard}: temas no leídos"
     users:
       currently_online: En línea
-      last_active_html: Última vez activo hace %{time_ago}
+      last_active_html: Visto por ultima vez hace %{time_ago}
       posted_in_topic_html: Escribió en %{topic_link}
       posts_count:
         one: Ha escrito %{count} vez
