@@ -92,7 +92,7 @@ es:
       update: Actualizar
       update_btn_submitting: Actualizando...
     messageboard:
-      create: Crear un nuevo subforo
+      create: Nuevo subforo
       deleted_notice: Tablero de mensajes eliminado
       form:
         create_btn_submitting: :thredded.form.create_btn_submitting
