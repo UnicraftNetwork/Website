@@ -4,10 +4,10 @@
     <%= view_hooks.topic_page.title.render self, topic: topic do %>
       <h3><%= link_to topic.title, topic.path %><small>, por <%= user_link(topic.user) %>
           <% if topic.locked? %>
-            <i data-toggle="tooltip" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
+            <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.locked.message') %>" class="fa fa-lock" aria-hidden="true"></i>
           <% end %>
           <% if topic.sticky? %>
-            <i data-toggle="tooltip" title="<%= t('thredded.topics.sticky.label') %>" class="fa fa-thumb-tack" aria-hidden="true"></i>
+            <i data-toggle="tooltip" data-placement="top" title="<%= t('thredded.topics.sticky.label') %>" class="fa fa-thumb-tack" aria-hidden="true"></i>
           <% end %>
         </small>
       </h3>
