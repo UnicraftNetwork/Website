@@ -7,6 +7,8 @@
 <% if @topics.empty? %>
   <h5 align="center">No hay nada aquí :(</h5>
 <% else %>
+  <h4><%= messageboard.name %> <small><%= messageboard.description %></small></h4>
+
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>
