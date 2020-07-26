@@ -1,7 +1,7 @@
 <%= form_for private_topic,
              url: private_topic.submit_path,
              html: {
-                 class: "thredded--form thredded--new-private-topic-form #{local_assigns[:css_class]}",
+                 class: "#{local_assigns[:css_class]}",
                  'data-thredded-topic-form' => true,
                  # TODO: only autocomplete users in this private topic
                  'data-autocomplete-url' => autocomplete_users_path,
