@@ -1,0 +1,2 @@
+class MinecraftRegistriesController < ApplicationController
+end

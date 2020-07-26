@@ -1,3 +1,11 @@
 <% user_groups(user).each do |group| %>
   <a href="<%= staff_path %>" class="label" style="background-color: <%= group.colour_hex %>; color: white;"><%= group.name %></a>
 <% end %>
+
+<% minecraft_nick = resolve_minecraft_nick(user) %>
+<% if minecraft_nick.nil? %>
+  <i class="fa fa-times minecraft-unverified" data-toggle="tooltip" title="Este usuario no controla ninguna cuenta de Minecraft" data-placement="top" aria-hidden="true"></i>
+<% else %>
+  <i class="fa fa-check minecraft-verified" data-toggle="tooltip" title="Este usuario controla la cuenta de Minecraft: <%= minecraft_nick %>" data-placement="top" aria-hidden="true"></i>
+<% end %>
+
