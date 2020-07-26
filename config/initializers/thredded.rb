@@ -29,8 +29,8 @@ Thredded.user_path = lambda { |user|
 # This method is used by Thredded controllers and views to fetch the currently signed-in user
 Thredded.current_user_method = :"current_#{Thredded.user_class_name.demodulize.underscore}"
 
-# User avatar URL. rb-gravatar gem is used by default:
-Thredded.avatar_url = ->(user) { Gravatar.src(user.email, 156, 'mm') }
+# Modiefied so it fetches Minecraft skin heads
+Thredded.avatar_url = ->(user) { "#{Minecraft::Data::HEADS_API}/#{user.uuid}" }
 
 # ==> Permissions Configuration
 # By default, thredded uses a simple permission model, where all the users can post to all message boards,
