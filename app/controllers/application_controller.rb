@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   def contact; end
 
+  protect_from_forgery prepend: true
+
   helper_method :user_groups
   helper_method :username_color
   helper_method :username_color_of_uuid
