@@ -7,21 +7,22 @@ footer {
   margin-top: 25px;
   margin-bottom: 50px;
   color: #bdbdbd;
-}
 
-.references h5 {
-  font-weight: bold;
-  font-size: 18px;
-  color: #bdbdbd;
-}
+  h5 {
+    font-size: 18px;
+    color: #bdbdbd;
+    font-weight: bold;
+  }
 
-.references a {
-  color: #bdbdbd;
+  ul {
+    margin-bottom: 50px !important;
+  }
 }
 
 .list-group-item {
-  padding: 0.3rem 1rem !important;
-  border-radius: 3px !important;
+  padding: 0.3rem 1rem;
+  border-radius: 3px;
+  color: #bdbdbd;
 }
 
 .list-group {
@@ -38,6 +39,7 @@ footer {
 }
 
 .list-group-item:hover {
+  color: whitesmoke;
   background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
