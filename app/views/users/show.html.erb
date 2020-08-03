@@ -257,6 +257,14 @@
         <% end %>
       <% end %>
     </div>
+
+    <%# TODO: Style user's recent posts, which are fetched by the snippet below
+        Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+          .render partial: 'thredded/users/posts', locals: {
+            posts: Thredded.posts_page_view(scope: @user.thredded_posts.order_newest_first.limit(5),
+                                        current_user: @user)
+         }
+    %>
   </div>
 
   <br/>
