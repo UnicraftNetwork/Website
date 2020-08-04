@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery prepend: true
 
+  helper_method :uuid_to_profile_link
   helper_method :user_groups
   helper_method :username_color
   helper_method :username_color_of_uuid
@@ -31,5 +32,10 @@ class ApplicationController < ActionController::Base
   def resolve_minecraft_nick(user)
     minecraft_registry = MinecraftRegistry.find_by(uuid: user.uuid)
     minecraft_registry.nil? ? nil : minecraft_registry.nick
+  end
+
+  def uuid_to_profile_link(uuid)
+    user = User.find_by(uuid: uuid)
+    user.nil? ? nil : "#{root_url}u/#{user.name}"
   end
 end

@@ -28,7 +28,16 @@
           <td><%= record.wools %></td>
           <td><%= record.monuments %></td>
           <td><%= record.cores %></td>
-          <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt=""> <%= record.nick %></td>
+          <% profile_link = uuid_to_profile_link(record.uuid) %>
+          <td><img class="stats-head-entry" src="<%= Minecraft::Data.head_url_of_uuid(record.uuid) %>" alt="" />
+            <% if profile_link.nil? %>
+              <%= record.nick %>
+            <% else %>
+              <a style="color: <%= username_color_of_uuid(record.uuid) %>" href="<%= profile_link %>">
+                <%= record.nick %>
+              </a>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
