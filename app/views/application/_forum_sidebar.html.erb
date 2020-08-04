@@ -1,29 +1,20 @@
-<div class="sidebar hidden-xs">
-  <ul class="navbar-nav nav-pills nav-stacked sidebar-nav-pills">
-    <li><h4>Nuevo</h4></li>
-    <li class="sidebar-item <%= request.path.eql?("#{Forums::PATH}/") ? 'sidebar-active-item' : 'sidebar-inactive-item' %>">
-      <%= link_to 'Recientes', Forums::PATH %>
-    </li>
+<div class="d-none d-sm-block">
+  <div class="sidebar">
+    <%= render :partial => 'subforums_list' %>
+  </div>
+  <div class="table-responsive">
+    <iframe src="https://discordapp.com/widget?id=658401734510772251&theme=dark" width="250" height="500" allowtransparency="true" frameborder="0"></iframe>
+  </div>
+</div>
 
-    <% Thredded::MessageboardGroup.all.each do |group| %>
-      <% next if group.messageboards.empty? %>
+<div class="d-block d-sm-none">
+  <a class="btn btn-primary btn-block" data-toggle="collapse" href="#subforums-collapsible" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fa fa-list-ul" aria-hidden="true"></i> Subforos
+  </a>
 
-      <% if group.name.present? and Thredded.show_messageboard_group_page %>
-        <li><h4><%= group.name %></h4></li>
-        <% group.messageboards.each do |messageboard| %>
-          <% @category_path = "#{Forums::PATH}/#{messageboard.slug}" %>
-          <li class="sidebar-item <%= request.path.start_with?(@category_path) ? 'sidebar-active-item' : 'sidebar-inactive-item' %>">
-            <a href="<%= @category_path %>"><%= messageboard.name %>
-              <% if messageboard.locked? %>
-                <i style="margin-top: 2.5px;" data-toggle="tooltip" data-placement="top" title="Subforo Bloqueado" class="fa fa-lock pull-right" aria-hidden="true"></i>
-              <% end %>
-            </a>
-          </li>
-        <% end %>
-        <div class="sidebar-group-flash"></div>
-      <% end %>
-    <% end %>
-  </ul>
+  <div class="collapse" id="subforums-collapsible">
+    <%= render :partial => 'subforums_list' %>
+  </div>
 </div>
 
 <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
@@ -31,13 +22,3 @@
 %>
 
 <br/>
-
-<a style="margin-bottom: 15px" class="btn btn-sm btn-warning" data-toggle="collapse" href="#discordCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
-  <i class="fab fa-discord"></i> Discord
-</a>
-
-<div class="collapse" id="discordCollapse">
-  <div class="table-responsive">
-    <iframe src="https://discordapp.com/widget?id=658401734510772251&theme=dark" width="250" height="500" allowtransparency="true" frameborder="0"></iframe>
-  </div>
-</div>

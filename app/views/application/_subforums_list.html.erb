@@ -1,0 +1,25 @@
+<ul class="navbar-nav nav-pills nav-stacked sidebar-nav-pills">
+  <li><h4>Nuevo</h4></li>
+  <li class="sidebar-item <%= request.path.eql?("#{Forums::PATH}/") ? 'sidebar-active-item' : 'sidebar-inactive-item' %>">
+    <%= link_to 'Recientes', Forums::PATH %>
+  </li>
+
+  <% Thredded::MessageboardGroup.all.each do |group| %>
+    <% next if group.messageboards.empty? %>
+
+    <% if group.name.present? and Thredded.show_messageboard_group_page %>
+      <li><h4><%= group.name %></h4></li>
+      <% group.messageboards.each do |messageboard| %>
+        <% @category_path = "#{Forums::PATH}/#{messageboard.slug}" %>
+        <li class="sidebar-item <%= request.path.start_with?(@category_path) ? 'sidebar-active-item' : 'sidebar-inactive-item' %>">
+          <a href="<%= @category_path %>"><%= messageboard.name %>
+            <% if messageboard.locked? %>
+              <i style="margin-top: 2.5px;" data-toggle="tooltip" data-placement="top" title="Subforo Bloqueado" class="fa fa-lock pull-right" aria-hidden="true"></i>
+            <% end %>
+          </a>
+        </li>
+      <% end %>
+      <div class="sidebar-group-flash"></div>
+    <% end %>
+  <% end %>
+</ul>
