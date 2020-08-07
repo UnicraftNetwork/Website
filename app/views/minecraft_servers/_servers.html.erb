@@ -1,0 +1,13 @@
+<div class="row">
+  <% @servers.each do |server| %>
+    <div class="col-xl-4 col-lg-4 col-md-4">
+      <div class="card box-shadow <%= server.online? ? "online" : "" %>">
+        <%= image_tag(server.family + ".png", :class => "card-img-top server-image") %>
+        <div class="card-body">
+          <p class="card-text server-name"><%= server.name %> <small class="float-right server-version">Versión: <%= server.version %></small></p>
+          <small class="server-command"><code>/server <%= server.name %></code></small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

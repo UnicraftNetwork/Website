@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   mount Thredded::Engine => Forums::PATH
 
+  get 'play'        => 'minecraft_servers#index'
+
   get 'contact'     => 'application#contact'
 
   get 'gallery'     => 'gallery#index'

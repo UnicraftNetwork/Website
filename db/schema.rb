@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_26_040817) do
+ActiveRecord::Schema.define(version: 2020_08_04_120825) do
 
   create_table "friendly_id_slugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "slug", null: false
@@ -40,6 +40,20 @@ ActiveRecord::Schema.define(version: 2020_06_26_040817) do
     t.integer "priority"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "minecraft_servers", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "id"
+    t.string "name"
+    t.string "family"
+    t.string "datacenter"
+    t.boolean "online"
+    t.string "online_users"
+    t.string "online_staff"
+    t.string "version"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["id"], name: "index_minecraft_servers_on_id", unique: true
   end
 
   create_table "pgm_records", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
