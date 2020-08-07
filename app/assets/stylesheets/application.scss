@@ -96,3 +96,13 @@ main p {
   margin-bottom: 15px;
 }
 
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table-bordered td,
+.table-bordered th,
+.table thead > tr > th {
+  border-top: 1px solid #474747;
+}
