@@ -4,7 +4,8 @@ Website
 This is the code that powers the website and backend services of the Unicraft Network, the Minecraft server home of many Chilean universities, in alliance with ElMedievo.
 
 Install the following services and configure them to run on their default ports:
-  * [Ruby 2.6.5](https://www.ruby-lang.org/en/).
+  * [Ruby 2.6.6](https://www.ruby-lang.org/en/).
+      * Windows: [Ruby Installer](https://rubyinstaller.org/downloads/) is recommended. Default options should do fine.
       * OS X: [RVM](http://rvm.io) is recommended over the default OS X Ruby. Here's a one-liner: `\curl -sSL https://get.rvm.io | bash -s stable --ruby`.
   * [MySQL 14.14](https://www.mysql.com/) or later.
   * [NodeJS 10.20.1](https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/) or later.
@@ -54,7 +55,13 @@ Run the following shell commands from within the Website repo, in order to creat
     rake db:create db:migrate
     RAILS_ENV=production rake db:create db:migrate db:seed
 
-## Environments
+## Environment Variables
+
+In production, the environment variable
+[ENV['MAIL_PASSWORD']](https://github.com/ElMedievo-UdeC/Website/blob/9c08862718b5ab2cce15dcfec0a8240833d5985b/config/environments/production.rb#L69)
+is to be defined, as it is the password to the support email which ActionMailer will use to send confirmations, recovery tokens, notifications, etc. via email.
+
+## Rails Environments
 
 Run the following shell commands from the Website repo to start all the backend services in the different environments.
 
