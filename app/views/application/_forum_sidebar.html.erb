@@ -8,6 +8,10 @@
   </div>
 </div>
 
+<%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+    .render(partial: 'thredded/shared/currently_online')
+%>
+
 <div class="d-lg-none">
   <a class="btn btn-primary btn-block" data-toggle="collapse" href="#subforums-collapsible" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-list-ul" aria-hidden="true"></i> Subforos
@@ -17,9 +21,5 @@
     <%= render :partial => 'subforums_list' %>
   </div>
 </div>
-
-<%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
-    .render(partial: 'thredded/shared/currently_online')
-%>
 
 <br/>
