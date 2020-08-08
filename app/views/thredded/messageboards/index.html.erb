@@ -57,7 +57,7 @@
                 <div class="row">
                   <div class="col-xs-6">
                     <div class="post-head-preview">
-                      <a href="<%= user_path topic.user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(topic.last_user.uuid) %>"></a>
+                      <a href="<%= user_path topic.last_user %>"><img src="<%= Minecraft::Data.head_url_of_uuid(topic.last_user.uuid) %>"></a>
                     </div>
                   </div>
                   <div class="col-xs-6">
