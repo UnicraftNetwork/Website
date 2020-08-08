@@ -8,11 +8,11 @@
   </div>
 </div>
 
-<%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
-    .render(partial: 'thredded/shared/currently_online')
-%>
-
 <div class="d-lg-none">
+  <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+      .render(partial: 'thredded/shared/currently_online')
+  %>
+
   <a class="btn btn-primary btn-block" data-toggle="collapse" href="#subforums-collapsible" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-list-ul" aria-hidden="true"></i> Subforos
   </a>
