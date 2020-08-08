@@ -3,16 +3,15 @@
     <%= render :partial => 'subforums_list' %>
   </div>
   <br/>
+  <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+      .render(partial: 'thredded/shared/currently_online')
+  %>
   <div class="table-responsive">
     <iframe src="https://discordapp.com/widget?id=658401734510772251&theme=dark" width="250" height="500" allowtransparency="true" frameborder="0"></iframe>
   </div>
 </div>
 
 <div class="d-lg-none">
-  <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
-      .render(partial: 'thredded/shared/currently_online')
-  %>
-
   <a class="btn btn-primary btn-block" data-toggle="collapse" href="#subforums-collapsible" role="button" aria-expanded="false" aria-controls="collapseExample">
     <i class="fa fa-list-ul" aria-hidden="true"></i> Subforos
   </a>
@@ -20,6 +19,10 @@
   <div class="collapse" id="subforums-collapsible">
     <%= render :partial => 'subforums_list' %>
   </div>
+
+  <%= Thredded::ApplicationController.renderer.new(request.env.slice('warden'))
+      .render(partial: 'thredded/shared/currently_online')
+  %>
 </div>
 
 <br/>
