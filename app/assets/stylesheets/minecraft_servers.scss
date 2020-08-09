@@ -2,9 +2,11 @@ ul.unstyled, ol.unstyled {
   list-style: none;
 }
 
-.card {
-  color: #beb8bc;
-  max-width: 225px;
+.server-card {
+  .card {
+    color: #beb8bc;
+    max-width: 225px;
+  }
 }
 
 .online {
