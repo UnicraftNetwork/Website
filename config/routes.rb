@@ -34,8 +34,6 @@ Rails.application.routes.draw do
 
   get 'towns'       => 'towns#index'
 
-  get 'dashboard'   => 'dashboard#index'
-
   get 'shop'        => redirect('https://udecesports.buycraft.net/')
   get 'ipverify'    => redirect('https://cyberdevelopment.es/BotSentry/verify/?lightMode=false&language=es&messagesTitle=Unicraft%20Network')
 
