@@ -33,6 +33,7 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'                                 # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'mailcatcher', '~> 0.2.4'                                 # Intercept emails for testing purposes when working in development environment
 end
 
 group :test do
