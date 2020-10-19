@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   get 'towns'       => 'towns#index'
 
-  get 'shop'        => redirect('https://udecesports.buycraft.net/')
+  get 'shop'        => redirect('https://unicraftnetwork.buycraft.net/')
   get 'ipverify'    => redirect('https://cyberdevelopment.es/BotSentry/verify/?lightMode=false&language=es&messagesTitle=Unicraft%20Network')
 
   match '404', to: 'errors#not_found', via: :all
