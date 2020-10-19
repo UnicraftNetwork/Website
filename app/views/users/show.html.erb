@@ -68,12 +68,22 @@
             </div>
             <div class="col-md-4">
               <div class="hidden-sm hidden-xs">
-                <% 16.times do %>
-                  <img data-toggle="tooltip" title="???" data-placement="top" alt="" style="cursor: pointer; width: 32px;height: 32px;border-radius: 3px;" class="avatar" src="<%= image_url('bend.png') %>" rel="tooltip" data-original-title="bend" width="32" height="32">
+                <% @friends.shuffle.slice(0..15).each do |friend_uuid| %>
+                  <% friend_name = uuid_to_nickname(friend_uuid) %>
+                  <img data-toggle="tooltip"
+                       title="<%= friend_name %>"
+                       data-placement="top"
+                       alt=""
+                       style="cursor: pointer; width: 32px; height: 32px; border-radius: 3px;"
+                       class="avatar"
+                       src="<%= Minecraft::Data.head_url_of_uuid(friend_uuid) %>"
+                       rel="tooltip"
+                       data-original-title="<%= friend_name %>"
+                       width="32" height="32">
                 <% end %>
               </div>
               <div class="heads-footer">amigos</div>
-              <div class="heads-stat-number">?</div>
+              <div class="heads-stat-number"><%= @friends.size %></div>
             </div>
           </div>
         </div>
