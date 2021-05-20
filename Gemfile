@@ -16,7 +16,7 @@ gem 'kaminari-i18n', '~> 0.5.0'                                 # Pagination i18
 gem 'minecraft-data', '~> 0.2.0',                               # Retrieves up-to-date, minecraft player profiles's information
     git: 'https://github.com/UnicraftNetwork/minecraft-data'
 gem 'mysql2', '~> 0.5.3'                                        # MySQL, as the database for Active Record
-gem 'puma', '~> 4.1'                                            # Puma, as the app server
+gem 'puma', '~> 4.3'                                            # Puma, as the app server
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'                           # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails-i18n', '~> 6.0'                                      # i18n
 gem 'sanitize', '~> 5.2', '>= 5.2.1'                            # HTML & CSS Sanitizer
