@@ -1,6 +1,8 @@
 Website
 ---
 
+**NOTE**: This repository is no longer maintained. It has been publicly archived to serve as a public resource.
+
 This is the code that powers the website and backend services of the Unicraft Network, the Minecraft server home of many Chilean universities, in alliance with ElMedievo.
 
 Install the following services and configure them to run on their default ports:
